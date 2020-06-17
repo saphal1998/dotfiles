@@ -44,6 +44,12 @@
         "options": {
           "full_name": "zoomus"
         }
+      },
+      "discord": {
+        "version": "0.0.257",
+        "options": {
+          "full_name": "discord"
+        }
       }
     },
     "brew": {

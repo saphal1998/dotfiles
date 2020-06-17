@@ -9,6 +9,7 @@ cask 'spotify'
 cask 'visual-studio-code'
 cask 'postman'
 cask 'zoomus'
+cask 'discord'
 
 #Installing Software
 brew 'python3'
