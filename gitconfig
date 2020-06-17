@@ -1,0 +1,9 @@
+[user]
+	name = Saphal Patro
+	email = saphal1998@gmail.com
+[github]
+	user = saphal1998
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
