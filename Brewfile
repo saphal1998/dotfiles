@@ -11,6 +11,7 @@ cask 'postman'
 cask 'zoomus'
 cask 'discord'
 cask 'vlc'
+cask 'google-chrome'
 
 #Installing Software
 brew 'python3'

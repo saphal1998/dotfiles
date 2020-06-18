@@ -56,6 +56,12 @@
         "options": {
           "full_name": "vlc"
         }
+      },
+      "google-chrome": {
+        "version": "83.0.4103.106",
+        "options": {
+          "full_name": "google-chrome"
+        }
       }
     },
     "brew": {
