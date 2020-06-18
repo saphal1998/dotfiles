@@ -10,6 +10,7 @@ cask 'visual-studio-code'
 cask 'postman'
 cask 'zoomus'
 cask 'discord'
+cask 'vlc'
 
 #Installing Software
 brew 'python3'

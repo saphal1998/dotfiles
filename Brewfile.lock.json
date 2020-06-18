@@ -50,6 +50,12 @@
         "options": {
           "full_name": "discord"
         }
+      },
+      "vlc": {
+        "version": "3.0.11",
+        "options": {
+          "full_name": "vlc"
+        }
       }
     },
     "brew": {
