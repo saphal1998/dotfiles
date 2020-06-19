@@ -7,7 +7,6 @@ tap "homebrew/services"
 cask 'iterm2'
 cask 'spotify'
 cask 'visual-studio-code'
-cask 'postman'
 cask 'zoomus'
 cask 'discord'
 cask 'vlc'
