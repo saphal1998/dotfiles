@@ -12,6 +12,7 @@ cask 'vlc'
 cask 'google-chrome'
 cask 'whatsapp'
 cask 'spotify'
+cask 'notion'
 
 #Installing Software
 brew 'python3'
