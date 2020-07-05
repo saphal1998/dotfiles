@@ -2,21 +2,21 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "4b9a95355a4784a6839821ec58467f8e1ed96ad7"
+        "revision": "9a3850f055cbb0eceec5b57d68334388594793ce"
       },
       "homebrew/cask": {
-        "revision": "232351c91bea878fdfce75f2250b779651577383"
+        "revision": "d08288df2a4bcb8199f6dd5957fb00d1b1d17c1c"
       },
       "homebrew/core": {
-        "revision": "5c67be10bf7cd7948d080fe0ca117e31a4365461"
+        "revision": "2820accc9a0486a8d5f0766bcf01fb560b9d3f9f"
       },
       "homebrew/services": {
-        "revision": "d2df55c36f67d10cd78bc58c84ac03e0c574d437"
+        "revision": "a379971f8cbca1875f625a47a93efeafc6512091"
       }
     },
     "cask": {
       "iterm2": {
-        "version": "3.3.11",
+        "version": "3.3.12",
         "options": {
           "full_name": "iterm2"
         }
@@ -28,19 +28,19 @@
         }
       },
       "visual-studio-code": {
-        "version": "1.46.0",
+        "version": "1.46.1",
         "options": {
           "full_name": "visual-studio-code"
         }
       },
       "postman": {
-        "version": "7.26.0",
+        "version": "7.27.1",
         "options": {
           "full_name": "postman"
         }
       },
       "zoomus": {
-        "version": "5.1.27838.0614",
+        "version": "5.1.28575.0629",
         "options": {
           "full_name": "zoomus"
         }
@@ -58,37 +58,43 @@
         }
       },
       "google-chrome": {
-        "version": "83.0.4103.106",
+        "version": "83.0.4103.116",
         "options": {
           "full_name": "google-chrome"
         }
       },
       "whatsapp": {
-        "version": "2.2023.2",
+        "version": "2.2025.7",
         "options": {
           "full_name": "whatsapp"
+        }
+      },
+      "notion": {
+        "version": "2.0.7",
+        "options": {
+          "full_name": "notion"
         }
       }
     },
     "brew": {
       "python3": null,
       "node": {
-        "version": "14.4.0",
+        "version": "14.5.0",
         "bottle": {
           "cellar": ":any",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/node-14.4.0.catalina.bottle.tar.gz",
-              "sha256": "7fbf484b2c921451809192dba684a838ba387a4affc1d4380ebb607f95ccf0ec"
+              "url": "https://homebrew.bintray.com/bottles/node-14.5.0.catalina.bottle.tar.gz",
+              "sha256": "91096144949902e76d46a3c0cfa26f5f55665da838f77ac96c58c416940d28d0"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/node-14.4.0.mojave.bottle.tar.gz",
-              "sha256": "06ef204701e93bbcf3909dba4ac9d3ca1d4df00a980f03cbeab390be1c562d34"
+              "url": "https://homebrew.bintray.com/bottles/node-14.5.0.mojave.bottle.tar.gz",
+              "sha256": "3f29cb2043ac857f2339ed390d54ea6124ff7be1c6fbb5a2a40a43261775247e"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/node-14.4.0.high_sierra.bottle.tar.gz",
-              "sha256": "68c7e5ff3e93bda3795d954b83609282f9ccf3cbe8096affeb28179d1fc1bd1d"
+              "url": "https://homebrew.bintray.com/bottles/node-14.5.0.high_sierra.bottle.tar.gz",
+              "sha256": "6d4ea6d0ed5ea232ca3614f187c106a813c07eee44f68fba884fcf4edc8b01b6"
             }
           }
         }
@@ -165,10 +171,10 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.4.0-58-g624efee",
+        "HOMEBREW_VERSION": "2.4.3-43-g505c1e7",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "5c67be10bf7cd7948d080fe0ca117e31a4365461",
-        "CLT": "1103.0.32.62",
+        "Homebrew/homebrew-core": "2820accc9a0486a8d5f0766bcf01fb560b9d3f9f",
+        "CLT": "11.5.0.0.1.1588476445",
         "Xcode": "11.5",
         "macOS": "10.15.5"
       }

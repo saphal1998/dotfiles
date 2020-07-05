@@ -13,6 +13,7 @@ cask 'google-chrome'
 cask 'whatsapp'
 cask 'spotify'
 cask 'notion'
+cask 'postman'
 
 #Installing Software
 brew 'python3'
