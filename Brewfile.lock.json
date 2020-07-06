@@ -5,10 +5,10 @@
         "revision": "9a3850f055cbb0eceec5b57d68334388594793ce"
       },
       "homebrew/cask": {
-        "revision": "d08288df2a4bcb8199f6dd5957fb00d1b1d17c1c"
+        "revision": "22d15f627e9b373a20d96ba4db516c5c7956ea91"
       },
       "homebrew/core": {
-        "revision": "2820accc9a0486a8d5f0766bcf01fb560b9d3f9f"
+        "revision": "917fb2e9cca1adc747549037d9146d4e93c60de2"
       },
       "homebrew/services": {
         "revision": "a379971f8cbca1875f625a47a93efeafc6512091"
@@ -73,6 +73,18 @@
         "version": "2.0.7",
         "options": {
           "full_name": "notion"
+        }
+      },
+      "android-sdk": {
+        "version": "4333796",
+        "options": {
+          "full_name": "android-sdk"
+        }
+      },
+      "adoptopenjdk8": {
+        "version": "8,252:b09.1",
+        "options": {
+          "full_name": "adoptopenjdk/openjdk/adoptopenjdk8"
         }
       }
     },
@@ -171,9 +183,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.4.3-43-g505c1e7",
+        "HOMEBREW_VERSION": "2.4.3",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "2820accc9a0486a8d5f0766bcf01fb560b9d3f9f",
+        "Homebrew/homebrew-core": "917fb2e9cca1adc747549037d9146d4e93c60de2",
         "CLT": "11.5.0.0.1.1588476445",
         "Xcode": "11.5",
         "macOS": "10.15.5"

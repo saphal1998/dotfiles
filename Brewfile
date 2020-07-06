@@ -14,6 +14,8 @@ cask 'whatsapp'
 cask 'spotify'
 cask 'notion'
 cask 'postman'
+cask 'android-sdk'
+cask 'adoptopenjdk/openjdk/adoptopenjdk8'
 
 #Installing Software
 brew 'python3'
