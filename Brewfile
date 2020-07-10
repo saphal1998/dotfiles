@@ -2,6 +2,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "homebrew/cask-fonts"
 
 #Installing casks
 cask 'iterm2'
@@ -12,10 +13,12 @@ cask 'vlc'
 cask 'google-chrome'
 cask 'whatsapp'
 cask 'spotify'
-cask 'notion'
 cask 'postman'
 cask 'android-sdk'
 cask 'adoptopenjdk/openjdk/adoptopenjdk8'
+cask 'android-platform-tools'
+cask 'font-fira-code'
+cask 'phantomjs'
 
 #Installing Software
 brew 'python3'
