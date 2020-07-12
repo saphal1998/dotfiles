@@ -19,6 +19,7 @@ cask 'adoptopenjdk/openjdk/adoptopenjdk8'
 cask 'android-platform-tools'
 cask 'font-fira-code'
 cask 'phantomjs'
+cask 'android-file-transfer'
 
 #Installing Software
 brew 'python3'

@@ -107,6 +107,12 @@
         "options": {
           "full_name": "phantomjs"
         }
+      },
+      "android-file-transfer": {
+        "version": "latest",
+        "options": {
+          "full_name": "android-file-transfer"
+        }
       }
     },
     "brew": {
