@@ -21,6 +21,9 @@ cask 'font-fira-code'
 cask 'phantomjs'
 cask 'android-file-transfer'
 cask 'virtualbox'
+cask 'dingtalk'
+cask 'handbrake'
+cask 'obs'
 
 #Installing Software
 brew 'python3'
