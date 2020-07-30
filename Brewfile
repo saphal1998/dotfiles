@@ -24,6 +24,7 @@ cask 'virtualbox'
 cask 'dingtalk'
 cask 'handbrake'
 cask 'obs'
+cask 'adobe-creative-cloud'
 
 #Installing Software
 brew 'python3'

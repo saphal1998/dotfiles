@@ -137,6 +137,12 @@
         "options": {
           "full_name": "obs"
         }
+      },
+      "adobe-creative-cloud": {
+        "version": "5.2.0.436",
+        "options": {
+          "full_name": "adobe-creative-cloud"
+        }
       }
     },
     "brew": {
