@@ -24,6 +24,7 @@ cask 'virtualbox'
 cask 'dingtalk'
 cask 'handbrake'
 cask 'obs'
+cask 'keybase'
 
 #Installing Software
 brew 'python3'
