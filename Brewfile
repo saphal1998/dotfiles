@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
+tap "olets/tap"
 
 #Installing casks
 cask 'iterm2'
@@ -37,3 +38,4 @@ brew 'docker-machine'
 brew 'kubectl'
 brew 'carthage'
 brew 'bat'
+brew 'zsh-abbr'

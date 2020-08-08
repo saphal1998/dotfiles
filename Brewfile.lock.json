@@ -15,6 +15,9 @@
       },
       "homebrew/cask-fonts": {
         "revision": "f0177f59ec25a75a9e0acba1c44d12b752a53ebf"
+      },
+      "olets/tap": {
+        "revision": "68decd51a7dff977b85d2076b653ae134b367780"
       }
     },
     "cask": {
@@ -329,6 +332,11 @@
             }
           }
         }
+      },
+      "olets/tap/zsh-abbr": null,
+      "zsh-abbr": {
+        "version": "4.0.0",
+        "bottle": false
       }
     }
   },
