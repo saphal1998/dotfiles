@@ -24,7 +24,6 @@ cask 'virtualbox'
 cask 'dingtalk'
 cask 'handbrake'
 cask 'obs'
-cask 'keybase'
 
 #Installing Software
 brew 'python3'
@@ -36,3 +35,5 @@ brew 'cocoapods'
 brew 'docker'
 brew 'docker-machine'
 brew 'kubectl'
+brew 'carthage'
+brew 'bat'
