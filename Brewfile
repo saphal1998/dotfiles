@@ -25,6 +25,7 @@ cask 'dingtalk'
 cask 'handbrake'
 cask 'obs'
 cask 'popsql'
+cask 'figma'
 
 #Installing Software
 brew 'python3'
@@ -38,3 +39,5 @@ brew 'docker-machine'
 brew 'kubectl'
 brew 'carthage'
 brew 'bat'
+brew 'nvm'
+brew 'swiftlint'

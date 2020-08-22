@@ -343,6 +343,10 @@
       "zsh-abbr": {
         "version": "4.0.0",
         "bottle": false
+      },
+      "nvm": {
+        "version": "0.35.3",
+        "bottle": false
       }
     }
   },
