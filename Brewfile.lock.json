@@ -158,6 +158,12 @@
         "options": {
           "full_name": "popsql"
         }
+      },
+      "figma": {
+        "version": "latest",
+        "options": {
+          "full_name": "figma"
+        }
       }
     },
     "brew": {
@@ -347,6 +353,23 @@
       "nvm": {
         "version": "0.35.3",
         "bottle": false
+      },
+      "swiftlint": {
+        "version": "0.39.2",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/swiftlint-0.39.2.catalina.bottle.tar.gz",
+              "sha256": "32f9e5e37190e81856eff49c2118c04d1995110b509f0a4997e211c9f939919e"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/swiftlint-0.39.2.mojave.bottle.tar.gz",
+              "sha256": "c4fc10277d46c406277491003e5d5bbdfe526890c39b30eb924749696ed56d40"
+            }
+          }
+        }
       }
     }
   },
