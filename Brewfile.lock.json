@@ -164,6 +164,12 @@
         "options": {
           "full_name": "figma"
         }
+      },
+      "bitwarden": {
+        "version": "1.20.1",
+        "options": {
+          "full_name": "bitwarden"
+        }
       }
     },
     "brew": {
