@@ -26,6 +26,7 @@ cask 'obs'
 cask 'popsql'
 cask 'figma'
 cask 'bitwarden'
+cask 'postman'
 
 #Installing Software
 brew 'python3'
