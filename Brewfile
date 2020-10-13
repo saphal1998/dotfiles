@@ -28,6 +28,8 @@ cask 'figma'
 cask 'bitwarden'
 cask 'postman'
 cask 'kap'
+cask 'teamviewer'
+cask 'slack'
 
 #Installing Software
 brew 'python3'
