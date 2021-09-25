@@ -3,27 +3,18 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
-tap 'mongodb/brew'
 
 #Installing casks
 cask 'iterm2'
 cask 'visual-studio-code'
 cask 'zoom'
 cask 'discord'
-cask 'google-chrome'
-cask 'whatsapp'
 cask 'font-fira-code'
-cask 'figma'
-cask 'bitwarden'
 cask 'flutter'
 cask 'postman'
 cask 'notion'
 cask 'slack'
-cask 'intellij-idea'
-cask 'sequel-pro'
 cask 'virtualbox'
-cask 'lens'
-cask 'obs'
 
 #Installing Software
 brew 'python3'
@@ -39,10 +30,6 @@ brew 'zsh'
 brew 'tmux'
 brew 'golang' 
 brew 'httpd'
-brew 'postgres'
-brew 'openjdk@8'
 brew 'maven'
 brew 'java11'
 brew 'minikube'
-brew 'krew'
-brew 'kind'
