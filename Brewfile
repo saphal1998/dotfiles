@@ -13,8 +13,6 @@ cask 'font-fira-code'
 cask 'flutter'
 cask 'postman'
 cask 'notion'
-cask 'slack'
-cask 'virtualbox'
 
 #Installing Software
 brew 'python3'
@@ -33,3 +31,4 @@ brew 'httpd'
 brew 'maven'
 brew 'java11'
 brew 'minikube'
+brew 'hyperkit'
