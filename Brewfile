@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
+tap "heroku/brew"
 
 #Installing casks
 cask 'iterm2'
@@ -12,7 +13,11 @@ cask 'discord'
 cask 'font-fira-code'
 cask 'flutter'
 cask 'postman'
+cask 'google-chrome'
+cask 'vlc'
 cask 'notion'
+cask 'flutter'
+cask 'whatsapp'
 
 #Installing Software
 brew 'python3'
@@ -32,3 +37,5 @@ brew 'maven'
 brew 'java11'
 brew 'minikube'
 brew 'hyperkit'
+brew 'transmission-cli'
+brew 'heroku'
