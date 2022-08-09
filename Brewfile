@@ -7,7 +7,7 @@ tap "heroku/brew"
 tap "ethereum/ethereum"
 
 #Installing casks
-cask 'wrap'
+cask 'warp'
 cask 'visual-studio-code'
 cask 'zoom'
 cask 'discord'
