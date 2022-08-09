@@ -4,9 +4,10 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
 tap "heroku/brew"
+tap "ethereum/ethereum"
 
 #Installing casks
-cask 'iterm2'
+cask 'wrap'
 cask 'visual-studio-code'
 cask 'zoom'
 cask 'discord'
@@ -21,7 +22,7 @@ cask 'whatsapp'
 
 #Installing Software
 brew 'python3'
-brew 'node'
+brew 'node@16'
 brew 'yarn'
 brew 'thefuck'
 brew 'docker'
@@ -39,3 +40,4 @@ brew 'minikube'
 brew 'hyperkit'
 brew 'transmission-cli'
 brew 'heroku'
+brew 'ethereum'
