@@ -19,6 +19,7 @@ cask 'vlc'
 cask 'notion'
 cask 'flutter'
 cask 'whatsapp'
+cask 'bitwarden'
 
 #Installing Software
 brew 'python3'
