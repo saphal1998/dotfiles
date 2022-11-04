@@ -5,6 +5,8 @@ tap "homebrew/services"
 tap "homebrew/cask-fonts"
 tap "heroku/brew"
 tap "ethereum/ethereum"
+tap "homebrew/cask-versions"
+tap "mdogan/zulu"
 
 #Installing casks
 cask 'warp'
@@ -29,11 +31,16 @@ cask 'yt-music'
 cask 'visualboyadvance-m'
 cask 'kap'
 cask 'alloy'
-cask 'crossover'
+cask 'popsql'
+cask 'slack'
+cask 'zulu-jdk7'
 
 #Installing Software
 brew 'python3'
 brew 'node@16'
+brew 'nvm'
+brew 'node'
+brew 'tldr'
 brew 'pnpm'
 brew 'rustup'
 brew 'yarn'
@@ -56,3 +63,7 @@ brew 'transmission-cli'
 brew 'heroku'
 brew 'ethereum'
 brew 'neovim'
+brew 'mysql@5.7'
+brew 'ant@1.9'
+brew 'svn'
+brew 'maven'
