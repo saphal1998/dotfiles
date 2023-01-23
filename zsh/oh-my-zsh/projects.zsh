@@ -3,3 +3,4 @@
 cloud=~/Developer/work/courses/cloud
 plus=~/Developer/work/PLUS
 portfolio=~/Developer/personal/portfolio
+os=~/Developer/personal/os

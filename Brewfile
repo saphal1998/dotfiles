@@ -6,6 +6,7 @@ tap "homebrew/cask-fonts"
 tap "ethereum/ethereum"
 tap "homebrew/cask-versions"
 tap "mdogan/zulu"
+tap "riscv/riscv"
 
 #Installing casks
 cask 'visual-studio-code'
@@ -86,3 +87,5 @@ brew 'selenium-server'
 brew 'terraform'
 brew 'fzf'
 brew 'awscli'
+brew 'riscv-tools'
+brew 'qemu'

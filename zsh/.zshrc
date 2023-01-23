@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
+
 # Ensure sources are imported first
 [[ -f "$HOME/dotfiles/zsh/sources.zsh" ]] && source "$HOME/dotfiles/zsh/sources.zsh"
 
