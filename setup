@@ -8,7 +8,7 @@ GITHUB_USER="saphal1998"
 # GitHub repos to download
 USER_CONFIG_REPOS=()
 # Install location of system configuration repos
-CONFIG_REPO_PREFIX=~/src/pocket
+CONFIG_REPO_PREFIX=~/config
 DOTFILES_REPO_PATH="$CONFIG_REPO_PREFIX/dotfiles"
 
 # Get all of our config related repos in one place
@@ -36,3 +36,4 @@ fi
 ln -sf ~/.dotfiles "$DOTFILES_REPO_PATH"
 ln -sf "$DOTFILES_REPO_PATH/Brewfile" ~/.Brewfile
 ln -sf "$DOTFILES_REPO_PATH/rcrc" ~/.rcrc
+ln -sf "$DOTFILES_REPO_PATH/zsh/zshrc" ~/.zshrc
