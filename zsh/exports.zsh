@@ -25,3 +25,6 @@ export NVM_DIR="$HOME/.nvm"
 # Adding GPG Support
 GPG_TTY=$(tty)
 export GPG_TT
+
+# Changing custom folder for ZSH
+ZSH_CUSTOM="$HOME/dotfiles/zsh/oh-my-zsh"
