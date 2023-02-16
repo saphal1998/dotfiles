@@ -7,6 +7,7 @@ tap "ethereum/ethereum"
 tap "homebrew/cask-versions"
 tap "mdogan/zulu"
 tap "riscv/riscv"
+tap "johanhaleby/kubetail"
 
 #Installing casks
 cask 'visual-studio-code'
@@ -15,9 +16,7 @@ cask 'yt-music'
 cask 'slack'
 cask 'zoom'
 cask 'figma'
-cask 'docker'
 cask 'discord'
-cask 'mimestream'
 cask 'font-fira-code-nerd-font'
 cask 'font-recursive-code'
 cask 'flutter'
@@ -46,11 +45,13 @@ cask 'iterm2'
 cask 'chromedriver'
 cask 'temurin8'
 cask 'google-cloud-sdk'
+cask 'docker'
 
 #Installing Software
 brew 'python3'
 brew 'nvm'
 brew 'tldr'
+brew 'kops'
 brew 'pnpm'
 brew 'rustup'
 brew 'azure-cli'
@@ -69,6 +70,7 @@ brew 'maven'
 brew 'java11'
 brew 'wget'
 brew 'minikube'
+brew 'helm'
 brew 'flyctl'
 brew 'pinentry-mac'
 brew 'gpg'
@@ -89,3 +91,4 @@ brew 'fzf'
 brew 'awscli'
 brew 'riscv-tools'
 brew 'qemu'
+brew 'kubetail'

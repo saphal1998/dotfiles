@@ -1,0 +1,2 @@
+# jenv
+eval "$(jenv init -)"

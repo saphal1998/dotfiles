@@ -37,3 +37,4 @@ ln -sf ~/.dotfiles "$DOTFILES_REPO_PATH"
 ln -sf "$DOTFILES_REPO_PATH/Brewfile" ~/.Brewfile
 ln -sf "$DOTFILES_REPO_PATH/rcrc" ~/.rcrc
 ln -sf "$DOTFILES_REPO_PATH/zsh/zshrc" ~/.zshrc
+ln -sf "$DOTFILES_REPO_PATH/tmux/tmux.conf" ~/.tmux.conf

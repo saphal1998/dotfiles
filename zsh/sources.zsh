@@ -4,6 +4,9 @@
 # Ensure that aliases are loaded first
 [[ -f "$HOME/dotfiles/zsh/aliases.zsh" ]] && source "$HOME/dotfiles/zsh/aliases.zsh"
 
+# Ensure that evals are computed too
+[[ -f "$HOME/dotfiles/zsh/evals.zsh" ]] && source "$HOME/dotfiles/zsh/evals.zsh"
+
 # fzf
 [[ -f "$DOTFILES_PATH/zsh/fzf.zsh" ]] && source "$DOTFILES_PATH/zsh/fzf.zsh"
 
