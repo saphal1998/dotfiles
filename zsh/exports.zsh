@@ -7,6 +7,9 @@ export PATH=/usr/local/bin:$PATH
 # Adding homebrew bin to Path
 export PATH=/opt/homebrew/bin:$PATH
 
+# Adding MYSQL to path
+export PATH=/opt/homebrew/opt/mysql@5.7/bin:$PATH
+
 # Adding sbin homebrew to Path
 export PATH=/opt/homebrew/sbin:$PATH
 
