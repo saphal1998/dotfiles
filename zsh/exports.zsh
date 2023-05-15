@@ -22,6 +22,15 @@ export PATH="/opt/homebrew/opt/pocketbase:$PATH"
 # Adding rust to Path
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# Adding Scala to Path
+export PATH="$PATH:/opt/homebrew/opt/scala@2.13/bin"
+
+# Adding Go Bin to path
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
+# Nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -32,3 +41,9 @@ export GPG_TT
 
 # Changing custom folder for ZSH
 ZSH_CUSTOM="$HOME/dotfiles/zsh/oh-my-zsh"
+
+# Adding kubeconfig to env
+export KUBECONFIG="$HOME/.kube/config"
+
+# Adding Spark to path
+export SPARK_HOME="/opt/homebrew/opt/apache-spark/libexec"

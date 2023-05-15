@@ -75,6 +75,7 @@ plugins=(
     zsh-autosuggestions
     aws
     fzf
+    kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
