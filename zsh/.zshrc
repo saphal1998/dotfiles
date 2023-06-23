@@ -78,7 +78,7 @@ plugins=(
     kubectl
 )
 
-source $ZSH/oh-my-zsh.sh
+source $ZSH/projects.zsh
 
 # User configuration
 
