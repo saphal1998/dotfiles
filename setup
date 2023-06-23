@@ -1,41 +1,13 @@
 #!/bin/bash
 set -e
 
-# This script is designed to be run as part of the strap bootstrapping process.
-# Assume that git and brew are installed. Assume that dotfiles repo is in ~.
+# Set up onetime links for all of the files
 
-GITHUB_USER="saphal1998"
-# GitHub repos to download
-USER_CONFIG_REPOS=()
-# Install location of system configuration repos
-CONFIG_REPO_PREFIX=~/config
 DOTFILES_REPO_PATH="$CONFIG_REPO_PREFIX/dotfiles"
-
-# Get all of our config related repos in one place
-mkdir -p "$CONFIG_REPO_PREFIX"
-
-if [ -n "$USER_CONFIG_REPOS" ]; then
-  (
-    cd "$CONFIG_REPO_PREFIX"
-    for repo in "${USER_CONFIG_REPOS[@]}"
-    do
-      if [ ! -d "$repo" ]; then
-        REPO_URL="https://github.com/$GITHUB_USER/$repo"
-        git clone --recurse-submodules "$REPO_URL"
-      else
-        (
-          cd "$repo"
-          git pull --recurse-submodules --autostash
-        )
-      fi
-    done
-  )
-fi
 
 # Link time
 ln -sf ~/dotfiles "$DOTFILES_REPO_PATH"
 ln -sf "$DOTFILES_REPO_PATH/Brewfile" ~/.Brewfile
-ln -sf "$DOTFILES_REPO_PATH/rcrc" ~/.rcrc
 ln -sf "$DOTFILES_REPO_PATH/zsh/.zshrc" ~/.zshrc
 ln -sf "$DOTFILES_REPO_PATH/tmux/tmux.conf" ~/.tmux.conf
 
