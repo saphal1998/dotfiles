@@ -9,6 +9,7 @@ tap "mdogan/zulu"
 tap "riscv/riscv"
 tap "johanhaleby/kubetail"
 tap 'planetscale/tap'
+tap "koekeishiya/formulae"
 
 #Installing casks
 cask 'zoom'
@@ -24,7 +25,6 @@ cask 'obs'
 cask 'brave-browser'
 cask 'mactex-no-gui'
 cask 'transmission'
-cask 'rectangle'
 cask 'keka'
 cask 'flycut'
 cask 'onyx'
@@ -38,6 +38,8 @@ cask 'visualvm'
 
 #Installing Software
 brew 'python3'
+brew 'yabai'
+brew 'skhd'
 brew 'nvm'
 brew 'tldr'
 brew 'kops'
