@@ -1,12 +1,28 @@
 #!/bin/bash
 set -e
 
-# Set up onetime links for all of the files
+CONFIG_REPO_PREFIX=~/config
 
+if [ ! -d "$CONFIG_REPO_PREFIX" ]; then
+    mkdir "$CONFIG_REPO_PREFIX"
+fi
+
+git --version 2>&1 >/dev/null
+GIT_IS_AVAILABLE=$?
+if [ $GIT_IS_AVAILABLE -ne 0 ]; then
+    echo "Git is not available"
+    exit 1
+fi
+
+# Set up onetime links for all of the files
 DOTFILES_REPO_PATH="$CONFIG_REPO_PREFIX/dotfiles"
+if [ ! -d "$DOTFILES_REPO_PATH" ]; then
+    echo "dotfiles don't exist at $DOTFILES_REPO_PATH"
+    exit 1
+fi
 
 # Link time
-ln -sf ~/dotfiles "$DOTFILES_REPO_PATH"
+ln -sf ~/.config "$CONFIG_REPO_PREFIX"
 ln -sf "$DOTFILES_REPO_PATH/Brewfile" ~/.Brewfile
 ln -sf "$DOTFILES_REPO_PATH/zsh/.zshrc" ~/.zshrc
 ln -sf "$DOTFILES_REPO_PATH/tmux/tmux.conf" ~/.tmux.conf
