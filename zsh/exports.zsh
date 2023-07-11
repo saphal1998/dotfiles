@@ -61,3 +61,7 @@ esac
 
 # TERM
 TERM=xterm
+
+
+#Adding Scripts
+export PATH="$PATH:$HOME/dotfiles/scripts"

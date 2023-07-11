@@ -10,6 +10,7 @@ tap "riscv/riscv"
 tap "johanhaleby/kubetail"
 tap 'planetscale/tap'
 tap "koekeishiya/formulae"
+tap "pyroscope-io/brew"
 
 #Installing casks
 cask 'zoom'
@@ -21,7 +22,7 @@ cask 'vlc'
 cask 'flutter'
 cask 'inkdrop'
 cask 'figma'
-cask 'obs'
+cask 'rectangle'
 cask 'brave-browser'
 cask 'mactex-no-gui'
 cask 'transmission'
@@ -30,16 +31,12 @@ cask 'flycut'
 cask 'onyx'
 cask 'imageoptim'
 cask 'visual-studio-code'
-cask 'kap'
 cask 'sequel-ace'
 cask 'zulu-jdk7'
 cask 'chromedriver'
-cask 'visualvm'
 
 #Installing Software
 brew 'python3'
-brew 'yabai'
-brew 'skhd'
 brew 'nvm'
 brew 'tldr'
 brew 'kops'
@@ -48,6 +45,7 @@ brew 'direnv'
 brew 'elixir'
 brew 'watch'
 brew 'jq'
+brew 'pyroscope'
 brew 'pnpm'
 brew 'rustup'
 brew 'zig'

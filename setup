@@ -1,11 +1,7 @@
 #!/bin/bash
 set -e
-
-CONFIG_REPO_PREFIX=~/config
-
-if [ ! -d "$CONFIG_REPO_PREFIX" ]; then
-    mkdir "$CONFIG_REPO_PREFIX"
-fi
+# Using the zsh installed by Homebrew
+sudo dscl . -create /Users/$USER UserShell $(brew --prefix)/bin/zsh
 
 git --version 2>&1 >/dev/null
 GIT_IS_AVAILABLE=$?
@@ -15,18 +11,14 @@ if [ $GIT_IS_AVAILABLE -ne 0 ]; then
 fi
 
 # Set up onetime links for all of the files
-DOTFILES_REPO_PATH="$CONFIG_REPO_PREFIX/dotfiles"
+DOTFILES_REPO_PATH="~/dotfiles"
 if [ ! -d "$DOTFILES_REPO_PATH" ]; then
     echo "dotfiles don't exist at $DOTFILES_REPO_PATH"
     exit 1
 fi
 
 # Link time
-ln -sf ~/.config "$CONFIG_REPO_PREFIX"
 ln -sf "$DOTFILES_REPO_PATH/Brewfile" ~/.Brewfile
 ln -sf "$DOTFILES_REPO_PATH/zsh/.zshrc" ~/.zshrc
 ln -sf "$DOTFILES_REPO_PATH/tmux/tmux.conf" ~/.tmux.conf
-
-
-# Using the zsh installed by Homebrew
-sudo dscl . -create /Users/$USER UserShell $(brew --prefix)/bin/zsh
+ln -sf "$DOTFILES_REPO_PATH/yabai/.yabairc" ~/.yabairc
