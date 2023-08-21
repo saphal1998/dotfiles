@@ -1,7 +1,7 @@
-#	Reconstructed via infocmp from file: /opt/homebrew/Cellar/ncurses/6.3/share/terminfo/74/tmux-256color
+#	Reconstructed via infocmp from file: /Users/monkafrog/.terminfo/74/tmux-256color
 tmux-256color|tmux with 256 colors,
 	am, hs, km, mir, msgr, xenl,
-	colors#0x100, cols#80, it#8, lines#24, pairs#0x10000,
+	colors#0x100, cols#80, it#8, lines#24, pairs#0,
 	acsc=++\,\,--..00``aaffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz{{||}}~~,
 	bel=^G, blink=\E[5m, bold=\E[1m, cbt=\E[Z, civis=\E[?25l,
 	clear=\E[H\E[J, cnorm=\E[34h\E[?25h, cr=\r,

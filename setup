@@ -21,4 +21,4 @@ fi
 ln -sf "$DOTFILES_REPO_PATH/Brewfile" ~/.Brewfile
 ln -sf "$DOTFILES_REPO_PATH/zsh/.zshrc" ~/.zshrc
 ln -sf "$DOTFILES_REPO_PATH/tmux/tmux.conf" ~/.tmux.conf
-ln -sf "$DOTFILES_REPO_PATH/yabai/.yabairc" ~/.yabairc
+ln -sf "$DOTFILES_REPO_PATH/nvim" ~/.config/nvim

@@ -62,6 +62,8 @@ esac
 # TERM
 TERM=xterm
 
+# TERMINFO: https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/
+export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 
 #Adding Scripts
 export PATH="$PATH:$HOME/dotfiles/scripts"
