@@ -32,7 +32,7 @@ cask 'zulu-jdk7'
 cask 'chromedriver'
 cask 'sequel-ace'
 cask 'flycut'
-cask 'iterm2'
+cask 'alacritty'
 
 #Installing Software
 brew 'python3'

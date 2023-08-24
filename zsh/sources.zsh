@@ -8,10 +8,10 @@
 [[ -f "$HOME/dotfiles/zsh/evals.zsh" ]] && source "$HOME/dotfiles/zsh/evals.zsh"
 
 # fzf
-[[ -f "$DOTFILES_PATH/zsh/fzf.zsh" ]] && source "$DOTFILES_PATH/zsh/fzf.zsh"
+[[ -f "$DOTFILES_REPO_PATH/zsh/fzf.zsh" ]] && source "$DOTFILES_REPO_PATH/zsh/fzf.zsh"
 
 # starship
-[[ -f "$DOTFILES_PATH/zsh/starship/starship.zsh" ]] && source "$DOTFILES_PATH/zsh/starship/starship.zsh"
+[[ -f "$DOTFILES_REPO_PATH/zsh/starship/starship.zsh" ]] && source "$DOTFILES_REPO_PATH/zsh/starship/starship.zsh"
 
 # Azure CLI autocomplete
 [[ -f "/opt/homebrew/opt/az/etc/bash_completion.d/az" ]] && source "/opt/homebrew/opt/az/etc/bash_completion.d/az"

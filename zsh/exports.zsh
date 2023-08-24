@@ -1,5 +1,5 @@
 # Adding a dotfiles directory to the path so that we can source files from there
-export DOTFILES_PATH="$HOME/dotfiles"
+export DOTFILES_REPO_PATH="$HOME/dotfiles"
 
 # Adding local bin to path
 export PATH=/usr/local/bin:$PATH
