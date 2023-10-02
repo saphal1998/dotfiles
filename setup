@@ -23,3 +23,5 @@ ln -sf "$DOTFILES_REPO_PATH/zsh/.zshrc" ~/.zshrc
 ln -sf "$DOTFILES_REPO_PATH/tmux/tmux.conf" ~/.tmux.conf
 ln -sf "$DOTFILES_REPO_PATH/nvim" ~/.config/nvim
 ln -sf "$DOTFILES_REPO_PATH/alacritty" ~/.config/alacritty
+ln -sf "$DOTFILES_REPO_PATH/yabai" ~/.config/yabai
+ln -sf "$DOTFILES_REPO_PATH/skhd" ~/.config/skhd
