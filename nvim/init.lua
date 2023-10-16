@@ -95,6 +95,7 @@ require('lazy').setup({
     },
   },
 
+  -- Useful plugin to show you pending keybinds.
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -110,8 +111,6 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
-
-  -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
@@ -564,4 +563,4 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-require("custom.keymaps.keymaps")
+require 'custom.keymaps.keymaps'
