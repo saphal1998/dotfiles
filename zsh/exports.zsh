@@ -13,6 +13,9 @@ export PATH=/opt/homebrew/opt/mysql@5.7/bin:$PATH
 # Adding ant to PATH
 export PATH=/opt/homebrew/opt/ant@1.9/bin:$PATH
 
+# Adding llvm to PATH
+export PATH=/opt/homebrew/opt/llvm@14/bin:$PATH
+
 # Adding sbin homebrew to Path
 export PATH=/opt/homebrew/sbin:$PATH
 
