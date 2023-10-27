@@ -16,3 +16,6 @@ alias cat=bat
 
 # Setting alias for thefuck
 eval $(thefuck --alias)
+
+# Alias rm to delete to trash
+alias rm=trash

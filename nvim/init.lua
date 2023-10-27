@@ -111,7 +111,7 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -219,8 +219,8 @@ require('lazy').setup({
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
-  -- require 'kickstart.plugins.autoformat',
-  -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.autoformat',
+  require 'kickstart.plugins.debug',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -334,12 +334,13 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim',
+      'bash' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
 
-    highlight = { enable = true },
+    highlight = { enable = true, additional_vim_regex_highlighting = false },
     indent = { enable = true },
     incremental_selection = {
       enable = true,
@@ -395,6 +396,17 @@ vim.defer_fn(function()
       },
     },
   }
+
+  local treesitter_parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+  treesitter_parser_config.templ = {
+    install_info = {
+      url = 'https://github.com/vrischmann/tree-sitter-templ.git',
+      files = { 'src/parser.c', 'src/scanner.c' },
+      branch = 'master',
+    },
+  }
+
+  vim.treesitter.language.register('templ', 'templ')
 end, 0)
 
 -- Diagnostic keymaps
@@ -479,6 +491,11 @@ local servers = {
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  templ = {
+    filetypes = {
+      'templ',
+    }
+  },
 
   lua_ls = {
     Lua = {
@@ -564,3 +581,10 @@ cmp.setup {
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 require 'custom.keymaps.keymaps'
+
+-- Using templ requires that we register the filetype: https://templ.guide/commands-and-tools/ide-support/
+vim.filetype.add {
+  extension = {
+    templ = 'templ',
+  },
+}
