@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+fileType=$1
+wordToSearch=$2
+
+echo "Searching for '$wordToSearch' in files of type '$fileType'"
+
+find . -type f -name "*.$fileType" -exec grep -H "$wordToSearch" {} \;

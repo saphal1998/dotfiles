@@ -13,6 +13,8 @@
 # starship
 [[ -f "$DOTFILES_REPO_PATH/zsh/starship/starship.zsh" ]] && source "$DOTFILES_REPO_PATH/zsh/starship/starship.zsh"
 
+[[ -f "$DOTFILES_REPO_PATH/zsh/functions.zsh" ]] && source "$DOTFILES_REPO_PATH/zsh/functions.zsh"
+
 # Azure CLI autocomplete
 [[ -f "/opt/homebrew/opt/az/etc/bash_completion.d/az" ]] && source "/opt/homebrew/opt/az/etc/bash_completion.d/az"
 
