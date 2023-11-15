@@ -4,7 +4,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -20,6 +19,8 @@ if not vim.loop.fs_stat(lazypath) then
   }
 end
 vim.opt.rtp:prepend(lazypath)
+
+vim.cmd.colorscheme('habamax')
 
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
@@ -110,16 +111,6 @@ require('lazy').setup({
       end,
     },
   },
-
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
-
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -281,7 +272,7 @@ vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
     winblend = 10,
-    previewer = false,
+    previewer = true,
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 

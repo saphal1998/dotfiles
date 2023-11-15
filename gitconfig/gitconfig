@@ -1,0 +1,21 @@
+# define command which will be used when "nvim" is set as a merge tool
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+# set "nvim" as tool for merging
+[merge]
+  tool = nvim
+# automatically launch merge tool without displaying a prompt
+[mergetool]
+  prompt = false
+
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+[user]
+	email = saphal1998@gmail.com
+	signingkey = "~/.ssh/id_ed25519.pub"
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
