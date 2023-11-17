@@ -534,8 +534,6 @@ cmp.setup {
   },
 }
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
 require 'custom.keymaps.keymaps'
 
 -- Using templ requires that we register the filetype: https://templ.guide/commands-and-tools/ide-support/
@@ -546,3 +544,6 @@ vim.filetype.add {
 }
 
 vim.g.instant_username = "monkaFrog"
+
+-- The line beneath this is called `modeline`. See `:help modeline`
+-- vim: ts=2 sts=2 sw=2 et

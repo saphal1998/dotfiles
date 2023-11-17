@@ -9,18 +9,18 @@ return {
 
     telescope.load_extension 'harpoon'
 
-    vim.keymap.set('n', '<C-h>m', harpoonUi.toggle_quick_menu, { desc = '[h]arpoon [m]enu' })
+    vim.keymap.set('n', '<C-p>m', harpoonUi.toggle_quick_menu, { desc = 'har[p]oon [m]enu' })
 
-    vim.keymap.set('n', '<C-h>f', harpoonMarks.add_file, { desc = '[h]arpoon [a]dd file' })
+    vim.keymap.set('n', '<C-p>f', harpoonMarks.add_file, { desc = 'har[p]oon [a]dd file' })
 
-    vim.keymap.set('n', '<C-h>n', harpoonUi.nav_next, { desc = '[h]arpoon [n]ext file' })
-    vim.keymap.set('n', '<C-h>p', harpoonUi.nav_prev, { desc = '[h]arpoon [p]rev file' })
+    vim.keymap.set('n', '<C-p>n', harpoonUi.nav_next, { desc = 'har[p]oon [n]ext file' })
+    vim.keymap.set('n', '<C-p>p', harpoonUi.nav_prev, { desc = 'har[p]oon [p]rev file' })
 
     for i = 1, 9 do
-      local key = '<C-h>' .. i
+      local key = '<C-p>' .. i
       vim.keymap.set('n', key, function()
         harpoonUi.nav_file(i)
-      end, { desc = '[h]arpoon jump to file [' .. i .. ']' })
+      end, { desc = 'har[p]oon jump to file [' .. i .. ']' })
     end
     harpoon.setup {}
   end,
