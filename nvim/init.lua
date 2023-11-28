@@ -170,8 +170,8 @@ require('lazy').setup({
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
-  require 'kickstart.plugins.autoformat',
   require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.autoformat',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -441,12 +441,12 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  clangd = {},
+  gopls = {},
+  pyright = {},
+  rust_analyzer = {},
+  tsserver = {},
+  html = { filetypes = { 'html', 'twig', 'hbs', 'jsp' } },
   templ = {
     filetypes = {
       'templ',
@@ -482,6 +482,7 @@ mason_lspconfig.setup_handlers {
       on_attach = on_attach,
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
+      auto_format = false
     }
   end,
 }
@@ -544,6 +545,35 @@ vim.filetype.add {
 }
 
 vim.g.instant_username = "monkaFrog"
+
+require 'custom.config.terminal'
+
+-- Using efm for making sure for formatting
+local lspconfig = require "lspconfig"
+
+
+local eslint = require('efmls-configs.linters.eslint')
+local prettier = require('efmls-configs.formatters.prettier')
+local languages = require('efmls-configs.defaults').languages()
+languages = vim.tbl_extend('force', languages, {
+  typescriptreact = { eslint, prettier },
+})
+local efmls_config = {
+  filetypes = vim.tbl_keys(languages),
+  settings = {
+    rootMarkers = { '.git/' },
+    languages = languages,
+  },
+  init_options = {
+    documentFormatting = true,
+    documentRangeFormatting = true,
+  },
+}
+lspconfig.efm.setup(vim.tbl_extend('force', efmls_config, {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  auto_format = true
+}))
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

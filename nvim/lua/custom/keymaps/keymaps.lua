@@ -15,7 +15,7 @@ vim.keymap.set('n', '<C-q>c', clear_quickfix, { desc = "Clear quick fix list" })
 -- Window
 vim.keymap.set("n", "=", [[<cmd>vertical resize +3<cr>]], { desc = "Make the window bigger vertically" })
 vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]], { desc = "Make the window smaller vertically" })
-vim.keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]],
-	{ desc = "Make the window bigger horizontally by pressing shift and =" })
-vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]],
-	{ desc = "Make the window smaller horizontally by pressing shift and -" })
+
+-- Terminal mode
+-- Exit terminal mode on clicking escape
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { silent = true, desc = "Exit terminal mode" })

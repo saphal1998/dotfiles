@@ -84,6 +84,6 @@ show_always = false
 format = "via [🤖 $version](bold green) "
 
 [custom.timetrace]
-command = """ timetrace status --format "Current project: {project} - Worked today: {trackedTimeToday}" """
+command = """timetrace status --format "Current project: {project} - Worked today: {trackedTimeToday}" """
 when = "timetrace status"
 shell = "sh"
