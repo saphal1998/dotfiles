@@ -15,8 +15,5 @@
 
 [[ -f "$DOTFILES_REPO_PATH/zsh/functions.zsh" ]] && source "$DOTFILES_REPO_PATH/zsh/functions.zsh"
 
-# Azure CLI autocomplete
-[[ -f "/opt/homebrew/opt/az/etc/bash_completion.d/az" ]] && source "/opt/homebrew/opt/az/etc/bash_completion.d/az"
-
 # Google cloud CLI autocomplete
 [[ -f "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]] && source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"

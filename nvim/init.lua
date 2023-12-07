@@ -170,8 +170,8 @@ require('lazy').setup({
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
-  require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.autoformat',
+  require 'monkafrog.kickstart.plugins.debug',
+  require 'monkafrog.kickstart.plugins.autoformat',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -179,7 +179,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  { import = 'custom.plugins' },
+  { import = 'monkafrog.custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -352,17 +352,6 @@ vim.defer_fn(function()
       },
     },
   }
-
-  local treesitter_parser_config = require('nvim-treesitter.parsers').get_parser_configs()
-  treesitter_parser_config.templ = {
-    install_info = {
-      url = 'https://github.com/vrischmann/tree-sitter-templ.git',
-      files = { 'src/parser.c', 'src/scanner.c' },
-      branch = 'master',
-    },
-  }
-
-  vim.treesitter.language.register('templ', 'templ')
 end, 0)
 
 -- Diagnostic keymaps
@@ -447,12 +436,6 @@ local servers = {
   rust_analyzer = {},
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs', 'jsp' } },
-  templ = {
-    filetypes = {
-      'templ',
-    }
-  },
-
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -535,18 +518,11 @@ cmp.setup {
   },
 }
 
-require 'custom.keymaps.keymaps'
-
--- Using templ requires that we register the filetype: https://templ.guide/commands-and-tools/ide-support/
-vim.filetype.add {
-  extension = {
-    templ = 'templ',
-  },
-}
+require 'monkafrog.custom.keymaps.keymaps'
 
 vim.g.instant_username = "monkaFrog"
 
-require 'custom.config.terminal'
+require 'monkafrog.custom.config.terminal'
 
 -- Using efm for making sure for formatting
 local lspconfig = require "lspconfig"

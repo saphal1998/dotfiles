@@ -1,3 +1,6 @@
+# opam
+eval $(opam env)
+
 # jenv
 eval "$(jenv init -)"
 

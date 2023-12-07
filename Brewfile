@@ -1,4 +1,3 @@
-tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "dominikbraun/timetrace"
 tap "homebrew/core"
@@ -44,13 +43,13 @@ brew 'sqlite'
 brew 'btop'
 brew 'spotifyd'
 brew 'w3m'
-brew 'spotify-tui'
 brew 'imagemagick'
 brew 'httpie'
 brew 'pnpm'
 brew 'parallel'
 brew 'rustup'
 brew 'glow'
+brew 'gifsicle'
 brew 'bun'
 brew 'zig'
 brew 'tomcat@7' # You need to edit the gem for this using brew edit (https://stackoverflow.com/questions/73586208/can-you-install-disabled-homebrew-packages)
@@ -84,6 +83,7 @@ brew 'mvn'
 brew 'helm'
 brew 'pandoc'
 brew 'flyctl'
+brew 'glow'
 brew 'cmatrix'
 brew 'just'
 brew 'gpg'
@@ -100,7 +100,6 @@ brew 'maven'
 brew 'ncurses'
 brew 'llvm'
 brew 'starship'
-brew 'delve'
 brew 'k9s'
 brew 'selenium-server'
 brew 'terraform'
@@ -113,3 +112,4 @@ brew 'kubetail'
 brew 'ansible'
 
 mas 'Bitwarden', id: 1352778147
+mas 'Keynote', id: 409183694
