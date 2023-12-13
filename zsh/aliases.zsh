@@ -10,6 +10,4 @@ alias vim=nvim
 eval $(thefuck --alias)
 
 # Kitty specific
-alias icat="kitten icat"
-alias d="kitten diff"
 alias bs="brew services"

@@ -20,8 +20,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.cmd.colorscheme('habamax')
-
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
 --
@@ -42,12 +40,14 @@ require('lazy').setup({
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
+
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
+
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 
@@ -530,9 +530,12 @@ local lspconfig = require "lspconfig"
 
 local eslint = require('efmls-configs.linters.eslint')
 local prettier = require('efmls-configs.formatters.prettier')
+local ruff = require('efmls-configs.linters.ruff')
 local languages = require('efmls-configs.defaults').languages()
 languages = vim.tbl_extend('force', languages, {
   typescriptreact = { eslint, prettier },
+  svelte = { eslint, prettier },
+  python = { ruff }
 })
 local efmls_config = {
   filetypes = vim.tbl_keys(languages),

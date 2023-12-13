@@ -21,13 +21,13 @@ cask 'vlc'
 cask 'rectangle'
 cask 'obs'
 cask 'onyx'
+cask 'wezterm'
 cask 'mactex-no-gui'
 cask 'transmission'
 cask 'imageoptim'
 cask 'chromedriver'
 cask 'sequel-ace'
 cask 'flycut'
-cask 'kitty'
 
 #Installing Software
 brew 'python3'
@@ -113,3 +113,4 @@ brew 'ansible'
 
 mas 'Bitwarden', id: 1352778147
 mas 'Keynote', id: 409183694
+mas 'Noir – Dark Mode for Safari', id: 1592917505

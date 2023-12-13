@@ -1,26 +1,25 @@
 return {
   'ThePrimeagen/harpoon',
+  branch = "harpoon2",
   config = function()
     local harpoon = require 'harpoon'
     local telescope = require 'telescope'
 
-    local harpoonMarks = require 'harpoon.mark'
-    local harpoonUi = require 'harpoon.ui'
+    telescope.load_extension('harpoon')
+    harpoon:setup()
 
-    telescope.load_extension 'harpoon'
-    vim.keymap.set('n', '<C-h>m', harpoonUi.toggle_quick_menu, { desc = '[h]arpoon [m]enu' })
+    vim.keymap.set('n', '<C-h>m', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
+      { desc = '[h]arpoon [m]enu' })
 
-    vim.keymap.set('n', '<C-h>f', harpoonMarks.add_file, { desc = '[h]arpoon [a]dd file' })
-
-    vim.keymap.set('n', '<C-h>n', harpoonUi.nav_next, { desc = '[h]arpoon [n]ext file' })
-    vim.keymap.set('n', '<C-h>p', harpoonUi.nav_prev, { desc = '[h]arpoon [p]rev file' })
+    vim.keymap.set('n', '<leader>fl', function()
+      harpoon:list():append()
+    end, { desc = '[h]arpoon add [f]i[l]e' })
 
     for i = 1, 9 do
-      local key = '<C-h>' .. i
+      local key = '<C-' .. i .. '>'
       vim.keymap.set('n', key, function()
-        harpoonUi.nav_file(i)
+        harpoon:list():select(i)
       end, { desc = '[h]arpoon jump to file [' .. i .. ']' })
     end
-    harpoon.setup {}
   end,
 }

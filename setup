@@ -25,6 +25,7 @@ ln -sf "$DOTFILES_REPO_PATH/tmux/tmux.conf" ~/.tmux.conf
 ln -sf "$DOTFILES_REPO_PATH/nvim" ~/.config/nvim
 ln -sf "$DOTFILES_REPO_PATH/alacritty" ~/.config/alacritty
 ln -sf "$DOTFILES_REPO_PATH/kitty" ~/.config/kitty
+ln -sf "$DOTFILES_REPO_PATH/wezterm" ~/.config/wezterm
 ln -sf "$DOTFILES_REPO_PATH/yabai" ~/.config/yabai
 ln -sf "$DOTFILES_REPO_PATH/skhd" ~/.config/skhd
 ln -sf "$DOTFILES_REPO_PATH/gitconfig/gitconfig" ~/.gitconfig

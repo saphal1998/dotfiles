@@ -19,3 +19,7 @@ vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]], { desc = "Make the win
 -- Terminal mode
 -- Exit terminal mode on clicking escape
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { silent = true, desc = "Exit terminal mode" })
+
+-- Macros
+vim.keymap.set('n', 'Q', '@qj', { desc = "Run the q register" })
+vim.keymap.set('x', 'Q', ':norm@q<C-R>', { desc = "Run the q register in visual mode" })
