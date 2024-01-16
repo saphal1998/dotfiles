@@ -6,12 +6,6 @@ vim.keymap.set('t', '<C-x>', '<C-\\><C-n><C-w>h', { silent = true })
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Center cursor after moving down half-page' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Center cursor after moving down half-page' })
 
--- Quickfix list
-local clear_quickfix = function()
-	vim.fn.setqflist({}, "r")
-end
-vim.keymap.set('n', '<C-q>c', clear_quickfix, { desc = "Clear quick fix list" })
-
 -- Window
 vim.keymap.set("n", "=", [[<cmd>vertical resize +3<cr>]], { desc = "Make the window bigger vertically" })
 vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]], { desc = "Make the window smaller vertically" })
@@ -23,3 +17,7 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { silent = true, desc = "Exit termin
 -- Macros
 vim.keymap.set('n', 'Q', '@qj', { desc = "Run the q register" })
 vim.keymap.set('x', 'Q', ':norm@q<C-R>', { desc = "Run the q register in visual mode" })
+
+-- Move blocks of lines in visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

@@ -1,15 +1,8 @@
 local wezterm = require "wezterm"
 
-local function scheme_for_appearance(appearance)
-	if appearance:find "Dark" then
-		return "Catppuccin Mocha"
-	else
-		return "Catppuccin Latte"
-	end
-end
 
 return {
-	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
+	color_scheme = 'Tangoesque (terminal.sexy)',
 	use_fancy_tab_bar = false,
 	enable_scroll_bar = false,
 	window_padding = {
@@ -23,5 +16,13 @@ return {
 	font = wezterm.font_with_fallback {
 		'FiraCode Nerd Font',
 	},
-	font_size = 16
+	font_size = 16,
+	keys = {
+		{
+			key = 'w',
+			mods = 'CMD',
+			action = wezterm.action.CloseCurrentPane { confirm = false },
+		},
+	}
+
 }

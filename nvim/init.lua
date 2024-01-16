@@ -216,6 +216,7 @@ vim.wo.signcolumn = 'yes'
 -- Decrease update time
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
+vim.cmd.colorscheme('habamax')
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -267,7 +268,6 @@ pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -358,7 +358,7 @@ end, 0)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set('n', '<leader>q', function() require('trouble').toggle() end, { desc = 'Open diagnostics list' })
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
@@ -432,7 +432,6 @@ require('mason-lspconfig').setup()
 local servers = {
   clangd = {},
   gopls = {},
-  pyright = {},
   rust_analyzer = {},
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs', 'jsp' } },
@@ -518,41 +517,6 @@ cmp.setup {
   },
 }
 
-require 'monkafrog.custom.keymaps.keymaps'
-
-vim.g.instant_username = "monkaFrog"
-
-require 'monkafrog.custom.config.terminal'
-
--- Using efm for making sure for formatting
-local lspconfig = require "lspconfig"
-
-
-local eslint = require('efmls-configs.linters.eslint')
-local prettier = require('efmls-configs.formatters.prettier')
-local ruff = require('efmls-configs.linters.ruff')
-local languages = require('efmls-configs.defaults').languages()
-languages = vim.tbl_extend('force', languages, {
-  typescriptreact = { eslint, prettier },
-  svelte = { eslint, prettier },
-  python = { ruff }
-})
-local efmls_config = {
-  filetypes = vim.tbl_keys(languages),
-  settings = {
-    rootMarkers = { '.git/' },
-    languages = languages,
-  },
-  init_options = {
-    documentFormatting = true,
-    documentRangeFormatting = true,
-  },
-}
-lspconfig.efm.setup(vim.tbl_extend('force', efmls_config, {
-  capabilities = capabilities,
-  on_attach = on_attach,
-  auto_format = true
-}))
-
+require 'monkafrog.custom'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

@@ -15,11 +15,17 @@ return {
       harpoon:list():append()
     end, { desc = '[h]arpoon add [f]i[l]e' })
 
-    for i = 1, 9 do
-      local key = '<C-' .. i .. '>'
-      vim.keymap.set('n', key, function()
-        harpoon:list():select(i)
-      end, { desc = '[h]arpoon jump to file [' .. i .. ']' })
-    end
+    vim.keymap.set('n', '<C-q>', function()
+      harpoon:list():select(1)
+    end, { desc = '[h]arpoon jump to file [' .. 1 .. ']' })
+    vim.keymap.set('n', '<C-w>', function()
+      harpoon:list():select(2)
+    end, { desc = '[h]arpoon jump to file [' .. 2 .. ']' })
+    vim.keymap.set('n', '<C-e>', function()
+      harpoon:list():select(3)
+    end, { desc = '[h]arpoon jump to file [' .. 3 .. ']' })
+    vim.keymap.set('n', '<C-r>', function()
+      harpoon:list():select(4)
+    end, { desc = '[h]arpoon jump to file [' .. 4 .. ']' })
   end,
 }
