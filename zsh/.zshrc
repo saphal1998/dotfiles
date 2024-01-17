@@ -78,8 +78,6 @@ plugins=(
     kubectl
 )
 
-source $ZSH/projects.zsh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
