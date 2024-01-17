@@ -3,7 +3,6 @@ alias gs="git status"
 alias pn="pnpm"
 
 # Nvim ftw
-alias vi=nvim
 alias vim=nvim
 
 # Setting alias for thefuck
