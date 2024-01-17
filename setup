@@ -26,6 +26,8 @@ ln -sf "$DOTFILES_REPO_PATH/nvim" ~/.config/nvim
 ln -sf "$DOTFILES_REPO_PATH/wezterm" ~/.config/wezterm
 ln -sf "$DOTFILES_REPO_PATH/gitconfig/gitconfig" ~/.gitconfig
 
+cp "$DOTFILES_REPO_PATH/ssh/*" ~/.ssh
+ansible-vault decrypt ~/.ssh/id_ed25519
+
 ## Clone tpm
-mkdir ~/.tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
