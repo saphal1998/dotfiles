@@ -72,7 +72,7 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim',             opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -117,11 +117,19 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
-        theme = 'onedark',
+        icons_enabled = true,
+        theme = 'auto',
         component_separators = '|',
         section_separators = '',
       },
+      sections = {
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_c = { 'filename', 'fileformat' },
+        lualine_x = { 'filetype', 'buffers' },
+        lualine_y = { 'progress' },
+        lualine_z = { 'location', 'hostname' }
+      }
     },
   },
 
@@ -135,7 +143,16 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      mappings = {
+        basic = true,
+        extras = true,
+        extended = true
+      }
+    }
+  },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -163,6 +180,9 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
+      "windwp/nvim-ts-autotag",
+      "nvim-treesitter/playground",
+      "HiPhish/nvim-ts-rainbow2"
     },
     build = ':TSUpdate',
   },
@@ -295,6 +315,9 @@ vim.defer_fn(function()
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
+    rainbow = { enable = true },
+    playground = { enable = true },
+    autotag = { enable = true },
 
     highlight = { enable = true, additional_vim_regex_highlighting = false },
     indent = { enable = true },
@@ -473,14 +496,15 @@ mason_lspconfig.setup_handlers {
 -- See `:help cmp`
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
-luasnip.config.setup {}
 
 cmp.setup {
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
     end,
+  },
+  experimental = {
+    ghost_text = true
   },
   mapping = cmp.mapping.preset.insert {
     ['<C-n>'] = cmp.mapping.select_next_item(),
