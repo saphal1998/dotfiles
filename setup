@@ -18,35 +18,38 @@ if [ ! -d "$DOTFILES_REPO_PATH" ]; then
 fi
 
 # Link time
-ln -sf "$DOTFILES_REPO_PATH/Brewfile" ~/.Brewfile
-ln -sf "$DOTFILES_REPO_PATH/zsh/.zshrc" ~/.zshrc
-ln -sf "$DOTFILES_REPO_PATH/zsh/oh-my-zsh" ~/.oh-my-zsh
-ln -sf "$DOTFILES_REPO_PATH/tmux" ~/.tmux
-ln -sf "$DOTFILES_REPO_PATH/tmux/tmux.conf" ~/.tmux.conf
+ln -sf "$DOTFILES_REPO_PATH/Brewfile" "$HOME/.Brewfile"
+ln -sf "$DOTFILES_REPO_PATH/zsh/.zshrc" "$HOME/.zshrc"
+ln -sf "$DOTFILES_REPO_PATH/zsh/oh-my-zsh" "$HOME/.oh-my-zsh"
+ln -sf "$DOTFILES_REPO_PATH/tmux" "$HOME/.tmux"
+ln -sf "$DOTFILES_REPO_PATH/tmux/tmux.conf" "$HOME/.tmux.conf"
 
 if [ ! -d "$HOME/.config" ]; then
    mkdir "$HOME/config"
 fi
 
-ln -sf "$DOTFILES_REPO_PATH/nvim" ~/.config/nvim
-ln -sf "$DOTFILES_REPO_PATH/wezterm" ~/.config/wezterm
-ln -sf "$DOTFILES_REPO_PATH/gitconfig/gitconfig" ~/.gitconfig
+ln -sf "$DOTFILES_REPO_PATH/nvim" "$HOME/.config/nvim"
+ln -sf "$DOTFILES_REPO_PATH/wezterm" "$HOME/.config/wezterm"
+ln -sf "$DOTFILES_REPO_PATH/gitconfig/gitconfig" "$HOME/.gitconfig"
 
 if [ ! -d "$HOME/.ssh" ]; then
    mkdir "$HOME/ssh"
 fi
-cp "$DOTFILES_REPO_PATH/ssh/config" ~/.ssh
-cp "$DOTFILES_REPO_PATH/ssh/id_ed25519" ~/.ssh
-cp "$DOTFILES_REPO_PATH/ssh/id_ed25519.pub" ~/.ssh
+cp "$DOTFILES_REPO_PATH/ssh/config" "$HOME/.ssh"
+cp "$DOTFILES_REPO_PATH/ssh/id_ed25519" "$HOME/.ssh"
+cp "$DOTFILES_REPO_PATH/ssh/id_ed25519.pub" "$HOME/.ssh"
 
 brew bundle -v
 
-ansible-vault decrypt ~/.ssh/id_ed25519
+ansible-vault decrypt "$HOME/.ssh/id_ed25519"
 
 ## Clone tpm
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+   git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+fi
 
 ## Key repeating
 defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
+
+git remote set-url origin git@github.com:saphal1998/dotfiles.git
