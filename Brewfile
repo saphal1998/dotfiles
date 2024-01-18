@@ -109,6 +109,4 @@ brew 'yt-dlp'
 brew 'zig'
 brew 'zsh'
 
-mas 'Bitwarden', id: 1352778147
-mas 'Keynote', id: 409183694
 mas 'Noir – Dark Mode for Safari', id: 1592917505
