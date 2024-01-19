@@ -182,7 +182,6 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
       "windwp/nvim-ts-autotag",
       "nvim-treesitter/playground",
-      "HiPhish/nvim-ts-rainbow2"
     },
     build = ':TSUpdate',
   },
