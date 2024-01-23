@@ -5,8 +5,4 @@ alias pn="pnpm"
 # Nvim ftw
 alias vim=nvim
 
-# Setting alias for thefuck
-eval $(thefuck --alias)
-
-# Kitty specific
 alias bs="brew services"

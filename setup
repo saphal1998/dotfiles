@@ -53,3 +53,7 @@ defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
 
 git remote set-url origin git@github.com:saphal1998/dotfiles.git
+
+# Install any good sane default software that cannot be installed using Brew
+nvm install --lts
+go install github.com/cosmtrek/air@latest
