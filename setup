@@ -57,3 +57,4 @@ git remote set-url origin git@github.com:saphal1998/dotfiles.git
 # Install any good sane default software that cannot be installed using Brew
 nvm install --lts
 go install github.com/cosmtrek/air@latest
+go install github.com/a-h/templ/cmd/templ@latest
