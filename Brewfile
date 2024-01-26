@@ -25,7 +25,6 @@ cask 'sequel-ace'
 cask 'vlc'
 cask 'wezterm'
 cask 'whatsapp'
-cask 'zed'
 cask 'zoom'
 
 #Installing Software
@@ -76,3 +75,4 @@ brew 'zig'
 brew 'zsh'
 
 mas 'Noir – Dark Mode for Safari', id: 1592917505
+mas 'Klack', id: 2143728525
