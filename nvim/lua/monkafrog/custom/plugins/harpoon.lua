@@ -27,5 +27,11 @@ return {
     vim.keymap.set('n', 'hr', function()
       harpoon:list():select(4)
     end, { desc = '[h]arpoon jump to file [' .. 4 .. ']' })
+    vim.keymap.set('n', 'ht', function()
+      harpoon:list():select(5)
+    end, { desc = '[h]arpoon jump to file [' .. 5 .. ']' })
+    vim.keymap.set('n', 'hy', function()
+      harpoon:list():select(6)
+    end, { desc = '[h]arpoon jump to file [' .. 6 .. ']' })
   end,
 }

@@ -6,12 +6,12 @@ tap "koekeishiya/formulae"
 tap "nikitabobko/tap"
 tap "oven-sh/bun"
 tap "riscv/riscv"
+tap "keith/formulae"
 
 #Installing casks
 cask 'adguard'
 cask 'bitwarden'
 cask 'chromedriver'
-cask 'discord'
 cask 'flycut'
 cask 'font-fira-code-nerd-font'
 cask 'font-recursive-code'
@@ -33,6 +33,7 @@ brew 'ansible'
 brew 'btop'
 brew 'bun'
 brew 'cmatrix'
+brew 'composer'
 brew 'fzf'
 brew 'gawk'
 brew 'gifsicle'
@@ -57,6 +58,7 @@ brew 'openjdk'
 brew 'parallel'
 brew 'pnpm'
 brew 'python3'
+brew 'reminders-cli'
 brew 'ripgrep'
 brew 'riscv-tools'
 brew 'rustup'
@@ -68,6 +70,7 @@ brew 'stow'
 brew 'tailwindcss'
 brew 'tmux'
 brew 'transmission-cli'
+brew 'tree'
 brew 'watch'
 brew 'wget'
 brew 'yt-dlp'

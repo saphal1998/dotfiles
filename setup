@@ -64,3 +64,4 @@ git remote set-url origin git@github.com:saphal1998/dotfiles.git
 nvm install --lts
 go install github.com/cosmtrek/air@latest
 go install github.com/a-h/templ/cmd/templ@latest
+go install github.com/rakyll/hey@latest
