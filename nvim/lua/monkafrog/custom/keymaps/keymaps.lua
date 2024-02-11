@@ -7,8 +7,8 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Center cursor after moving dow
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Center cursor after moving down half-page' })
 
 -- Window
-vim.keymap.set("n", "=", [[<cmd>vertical resize +3<cr>]], { desc = "Make the window bigger vertically" })
-vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]], { desc = "Make the window smaller vertically" })
+vim.keymap.set("n", "(", [[<cmd>vertical resize +3<cr>]], { desc = "Make the window bigger vertically" })
+vim.keymap.set("n", ")", [[<cmd>vertical resize -5<cr>]], { desc = "Make the window smaller vertically" })
 
 -- Terminal mode
 -- Exit terminal mode on clicking escape

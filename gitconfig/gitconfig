@@ -20,3 +20,5 @@
 	format = ssh
 [push]
 	autoSetupRemote = true
+[alias]
+	logadog = git log --oneline --decorate --graph --all
