@@ -1,12 +1,16 @@
 #!/bin/bash
 set -e
 
+echo "Checking if git is available"
+
 git --version 2>&1 >/dev/null
 GIT_IS_AVAILABLE=$?
 if [ $GIT_IS_AVAILABLE -ne 0 ]; then
     echo "Git is not available"
     exit 1
 fi
+
+echo "Checking if dotfiles are in the right path (~/dotfiles)"
 
 # Set up onetime links for all of the files
 DOTFILES_REPO_PATH="$HOME/dotfiles"
@@ -15,29 +19,42 @@ if [ ! -d "$DOTFILES_REPO_PATH" ]; then
     exit 1
 fi
 
+echo "Installing minimal set of dependencies"
 # Install the required dependencies
 brew install git
 brew install stow
 brew install zsh
 
+echo "Stowing the files in the dotfiles directory to one above aka $HOME"
+stow .
+
 # Using the zsh installed by Homebrew
 sudo dscl . -create /Users/$USER UserShell $(brew --prefix)/bin/zsh
 
 if [ ! -d "$HOME/.ssh" ]; then
-   mkdir "$HOME/ssh"
+   echo "Creating the .ssh folder"
+   mkdir -p "$HOME/.ssh"
 fi
+
+echo "Copying relevant ssh keys"
+
 cp "$DOTFILES_REPO_PATH/ssh/config" "$HOME/.ssh"
 cp "$DOTFILES_REPO_PATH/ssh/id_ed25519" "$HOME/.ssh"
 cp "$DOTFILES_REPO_PATH/ssh/id_ed25519.pub" "$HOME/.ssh"
 
+echo "Creating directory for spotifyd"
 if [ ! -d "$HOME/.config/spotifyd" ]; then
-   mkdir "$HOME/.config/spotifyd"
+   mkdir -p "$HOME/.config/spotifyd"
 fi
 cp "$DOTFILES_REPO_PATH/spotifyd/spotifyd.conf" "$HOME/.config/spotifyd/spotifyd.conf"
 
-brew bundle -v
+echo "Installing software"
+brew bundle -v 2>&1 >/dev/null
 
+echo "Password for decrypting ssh keys"
 ansible-vault decrypt "$HOME/.ssh/id_ed25519"
+
+echo "Password for decrypting spotifyd keys"
 ansible-vault decrypt "$HOME/.config/spotifyd/spotifyd.conf"
 
 ## Clone tpm
@@ -46,6 +63,6 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 fi
 
 ## Key repeating
-defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
-defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
+defaults write -g InitialKeyRepeat -int 12 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 git remote set-url origin git@github.com:saphal1998/dotfiles.git

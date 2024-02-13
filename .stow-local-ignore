@@ -24,3 +24,5 @@ _darcs
 # Contains credentials that should not be stowed
 spotifyd 
 ssh
+setup
+Brewfile.lock.json

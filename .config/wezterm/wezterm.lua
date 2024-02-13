@@ -12,10 +12,6 @@ return {
 		right = 0
 	},
 	tab_bar_at_bottom = true,
-
-	font = wezterm.font_with_fallback {
-		'FiraCode Nerd Font',
-	},
 	font_size = 16,
 	keys = {
 		{

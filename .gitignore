@@ -3,4 +3,5 @@ Brewfile.lock.json
 oh-my-zsh/plugins/**
 .tmux/plugins/*
 nvim/lazy-lock.json
+.config/spotifyd
 

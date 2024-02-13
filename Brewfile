@@ -23,6 +23,8 @@ cask 'wezterm'
 brew 'ansible'
 brew 'btop'
 brew 'cmatrix'
+brew 'nvm'
+brew 'golang'
 brew 'fzf'
 brew 'glow'
 brew 'httpd'
@@ -44,4 +46,4 @@ brew 'yt-dlp'
 brew 'zsh'
 
 mas 'Noir – Dark Mode for Safari', id: 1592917505
-mas 'Klack', id: 2143728525
+# mas 'Klack', id: 2143728525
