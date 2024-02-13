@@ -28,9 +28,6 @@ export PATH="/opt/homebrew/opt/pocketbase:$PATH"
 # Adding rust to Path
 export PATH="$PATH:$HOME/.cargo/bin"
 
-# Adding Scala to Path
-export PATH="$PATH:/opt/homebrew/opt/scala@2.13/bin"
-
 # Adding Go Bin to path
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
@@ -44,15 +41,6 @@ export NVM_DIR="/opt/homebrew/opt/nvm"
 # Adding GPG Support
 GPG_TTY=$(tty)
 export GPG_TT
-
-# Changing custom folder for ZSH
-ZSH_CUSTOM="$HOME/dotfiles/zsh/oh-my-zsh"
-
-# Adding kubeconfig to env
-export KUBECONFIG="$HOME/.kube/config"
-
-# Adding Spark to path
-export SPARK_HOME="/opt/homebrew/opt/apache-spark/libexec"
 
 # pnpm
 export PNPM_HOME="$HOME/.pnpm"

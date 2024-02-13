@@ -1,7 +1,5 @@
 #!/bin/bash
 set -e
-# Using the zsh installed by Homebrew
-sudo dscl . -create /Users/$USER UserShell $(brew --prefix)/bin/zsh
 
 git --version 2>&1 >/dev/null
 GIT_IS_AVAILABLE=$?
@@ -17,20 +15,13 @@ if [ ! -d "$DOTFILES_REPO_PATH" ]; then
     exit 1
 fi
 
-# Link time
-ln -sf "$DOTFILES_REPO_PATH/Brewfile" "$HOME/.Brewfile"
-ln -sf "$DOTFILES_REPO_PATH/zsh/.zshrc" "$HOME/.zshrc"
-ln -sf "$DOTFILES_REPO_PATH/zsh/oh-my-zsh" "$HOME/.oh-my-zsh"
-ln -sf "$DOTFILES_REPO_PATH/tmux" "$HOME/.tmux"
-ln -sf "$DOTFILES_REPO_PATH/tmux/tmux.conf" "$HOME/.tmux.conf"
+# Install the required dependencies
+brew install git
+brew install stow
+brew install zsh
 
-if [ ! -d "$HOME/.config" ]; then
-   mkdir "$HOME/config"
-fi
-
-ln -sf "$DOTFILES_REPO_PATH/nvim" "$HOME/.config/nvim"
-ln -sf "$DOTFILES_REPO_PATH/wezterm" "$HOME/.config/wezterm"
-ln -sf "$DOTFILES_REPO_PATH/gitconfig/gitconfig" "$HOME/.gitconfig"
+# Using the zsh installed by Homebrew
+sudo dscl . -create /Users/$USER UserShell $(brew --prefix)/bin/zsh
 
 if [ ! -d "$HOME/.ssh" ]; then
    mkdir "$HOME/ssh"
@@ -57,11 +48,4 @@ fi
 ## Key repeating
 defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
-
 git remote set-url origin git@github.com:saphal1998/dotfiles.git
-
-# Install any good sane default software that cannot be installed using Brew
-nvm install --lts
-go install github.com/cosmtrek/air@latest
-go install github.com/a-h/templ/cmd/templ@latest
-go install github.com/rakyll/hey@latest
