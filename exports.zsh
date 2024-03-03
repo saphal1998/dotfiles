@@ -5,28 +5,10 @@ export DOTFILES_REPO_PATH="$HOME/dotfiles"
 export PATH=/usr/local/bin:$PATH
 
 # Adding homebrew bin to Path
-export PATH=/opt/homebrew/bin:$PATH
-
-# Adding MYSQL to path
-export PATH=/opt/homebrew/opt/mysql@5.7/bin:$PATH
-
-# Adding ant to PATH
-export PATH=/opt/homebrew/opt/ant@1.9/bin:$PATH
-
-# Adding llvm to PATH
-export PATH=/opt/homebrew/opt/llvm@14/bin:$PATH
+export PATH=$HOMEBREW_PREFIX/bin:$PATH
 
 # Adding sbin homebrew to Path
-export PATH=/opt/homebrew/sbin:$PATH
-
-# Adding jenv to Path
-export PATH="$HOME/.jenv/bin:$PATH"
-
-# Adding Pocketbase to Path
-export PATH="/opt/homebrew/opt/pocketbase:$PATH"
-
-# Adding rust to Path
-export PATH="$PATH:$HOME/.cargo/bin"
+export PATH=$HOMEBREW_PREFIX/sbin:$PATH
 
 # Adding Go Bin to path
 export GOPATH=$HOME/go
@@ -34,7 +16,7 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
 # Nvm
-export NVM_DIR="/opt/homebrew/opt/nvm"
+export NVM_DIR="$HOMEBREW_PREFIX/opt/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -58,3 +40,10 @@ export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 
 #Adding Scripts
 export PATH="$PATH:$HOME/dotfiles/scripts"
+
+# Adding Android SDK (https://www.revelo.com/blog/how-to-build-an-android-development-environment-without-android-studio)
+# export ANDROID_SDK_ROOT="$HOME/Development/Android/sdk"
+# export ANDROID_CMD_LINE_TOOLS="$ANDROID_SDK_ROOT/cmdline-tools/latest"
+# export ANDROID_PLATFORM_TOOLS="$ANDROID_SDK_ROOT/platform-tools"
+# export ANDROID_AVD_HOME="$ANDROID_SDK_ROOT/avd"
+# export PATH="$PATH:$ANDROID_CMD_LINE_TOOLS/bin:$ANDROID_SDK_ROOT:$ANDROID_PLATFORM_TOOLS"
