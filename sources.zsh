@@ -14,3 +14,4 @@
 [[ -f "$HOME/starship/starship.zsh" ]] && source "$HOME/starship/starship.zsh"
 
 [[ -f "$HOME/functions.zsh" ]] && source "$HOME/functions.zsh"
+

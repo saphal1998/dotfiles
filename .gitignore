@@ -2,6 +2,6 @@ Brewfile.lock.json
 **/*.DS_Store
 oh-my-zsh/plugins/**
 .tmux/plugins/*
-nvim/lazy-lock.json
+**/*lock.json
 .config/spotifyd
 
