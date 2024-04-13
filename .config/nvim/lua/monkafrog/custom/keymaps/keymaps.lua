@@ -20,13 +20,8 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { silent = true, desc = 'Exit termin
 vim.keymap.set('n', 'Q', '@qj', { desc = 'Run the q register' })
 vim.keymap.set('x', 'Q', ':norm@q<C-R>', { desc = 'Run the q register in visual mode' })
 
--- Move blocks of lines in visual mode
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
-
 -- Tab related keymaps
-vim.keymap.set('n', '<leader>tz', ':tabnew | term<CR>', { desc = 'Open a new tab with a terminal' })
-vim.keymap.set('n', '<leader>tt', ':tabnew<CR>', { desc = 'Open a new tab' })
+vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { desc = 'Open a new tab' })
 vim.keymap.set('n', '<leader>td', ':tabclose<CR>', { desc = 'Close the current tab' })
 vim.keymap.set('n', '<leader>tl', ':tabnext<CR>', { desc = 'Next tab' })
 vim.keymap.set('n', '<leader>th', ':tabprev<CR>', { desc = 'Prev tab' })

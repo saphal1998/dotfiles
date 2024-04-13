@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 
 return {
-	color_scheme = "Tangoesque (terminal.sexy)",
+	color_scheme = "Tokyo Night",
 	use_fancy_tab_bar = false,
 	enable_scroll_bar = false,
 	window_padding = {

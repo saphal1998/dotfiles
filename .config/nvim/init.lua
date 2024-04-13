@@ -158,6 +158,7 @@ vim.opt.shell = 'zsh'
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Default color theme
 vim.cmd.colorscheme 'habamax'
 
 -- Diagnostic keymaps
@@ -740,6 +741,7 @@ require('lazy').setup {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
       require('mini.comment').setup()
+      require('mini.move').setup()
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
