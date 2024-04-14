@@ -7,11 +7,15 @@
 # Ensure that evals are computed too
 [[ -f "$HOME/evals.zsh" ]] && source "$HOME/evals.zsh"
 
-# fzf
-[[ -f "$HOME/fzf.zsh" ]] && source "$HOME/fzf.zsh"
-
 # starship
 [[ -f "$HOME/starship/starship.zsh" ]] && source "$HOME/starship/starship.zsh"
 
 [[ -f "$HOME/functions.zsh" ]] && source "$HOME/functions.zsh"
 
+# Using zsh autosuggestions
+[[ -f "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+# ZSH Auto Suggestions style
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#555555,bg=gray,underline"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+[[ -f "$HOME/fzf.zsh" ]] && source "$HOME/fzf.zsh"

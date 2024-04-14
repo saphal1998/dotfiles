@@ -24,7 +24,6 @@ cask 'whatsapp'
 
 #Installing Software
 brew 'ansible'
-brew 'atuin'
 brew 'btop'
 brew 'bun'
 brew 'cmake'
@@ -54,6 +53,10 @@ brew 'yt-dlp'
 brew 'zsh'
 brew 'git-delta'
 brew 'watch'
+brew 'zsh-syntax-highlighting'
+brew 'zsh-autosuggestions'
+brew 'zsh-completions'
+
 
 mas 'Noir – Dark Mode for Safari', id: 1592917505
 # mas 'Klack', id: 2143728525

@@ -20,10 +20,6 @@ export NVM_DIR="$HOMEBREW_PREFIX/opt/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Adding GPG Support
-GPG_TTY=$(tty)
-export GPG_TT
-
 # pnpm
 export PNPM_HOME="$HOME/.pnpm"
 case ":$PATH:" in
@@ -47,3 +43,4 @@ export PATH="$PATH:$HOME/dotfiles/scripts"
 # export ANDROID_PLATFORM_TOOLS="$ANDROID_SDK_ROOT/platform-tools"
 # export ANDROID_AVD_HOME="$ANDROID_SDK_ROOT/avd"
 # export PATH="$PATH:$ANDROID_CMD_LINE_TOOLS/bin:$ANDROID_SDK_ROOT:$ANDROID_PLATFORM_TOOLS"
+
