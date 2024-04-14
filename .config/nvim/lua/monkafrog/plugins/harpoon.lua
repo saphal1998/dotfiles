@@ -1,15 +1,16 @@
 return {
   'ThePrimeagen/harpoon',
-  branch = "harpoon2",
+  branch = 'harpoon2',
   config = function()
     local harpoon = require 'harpoon'
     local telescope = require 'telescope'
 
-    telescope.load_extension('harpoon')
+    telescope.load_extension 'harpoon'
     harpoon:setup()
 
-    vim.keymap.set('n', '<leader>hm', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
-      { desc = '[h]arpoon [m]enu' })
+    vim.keymap.set('n', '<leader>hm', function()
+      harpoon.ui:toggle_quick_menu(harpoon:list())
+    end, { desc = '[h]arpoon [m]enu' })
 
     vim.keymap.set('n', '<leader>hi', function()
       harpoon:list():append()

@@ -52,6 +52,8 @@ brew 'tmux'
 brew 'wget'
 brew 'yt-dlp'
 brew 'zsh'
+brew 'git-delta'
+brew 'watch'
 
 mas 'Noir – Dark Mode for Safari', id: 1592917505
 # mas 'Klack', id: 2143728525

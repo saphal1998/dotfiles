@@ -1,14 +1,6 @@
-# define command which will be used when "nvim" is set as a merge tool
-[mergetool "nvim"]
-  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
-# set "nvim" as tool for merging
-[merge]
-  tool = nvim
-# automatically launch merge tool without displaying a prompt
-[mergetool]
-  prompt = false
 [push]
 	default = simple
+	autoSetupRemote = true
 [credential]
 	helper = osxkeychain
 [user]
@@ -18,7 +10,35 @@
 	gpgsign = true
 [gpg]
 	format = ssh
-[push]
-	autoSetupRemote = true
+[pull]
+	rebase = false
 [alias]
 	logadog = log --oneline --decorate --graph --all
+[diff]
+	algorithm = patience
+	compactionHeuristic = true
+	tool = nvimdiff
+[difftool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd L\"
+
+[merge]
+	tool = nvimdiff4
+	prompt = false
+[mergetool "nvimdiff4"]
+	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	features = side-by-side line-numbers decorations
+	navigate = true
+	whitespace-error-style = 22 reverse
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
+
+[mergetool]
+	keepBackup = false
+[init]
+	defaultBranch = main

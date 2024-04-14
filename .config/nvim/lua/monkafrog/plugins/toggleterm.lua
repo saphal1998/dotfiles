@@ -7,5 +7,7 @@ return {
       shell = 'zsh',
       direction = 'float',
     }
+
+    vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm<CR>', { desc = '[T]oggle [T]erm' })
   end,
 }
