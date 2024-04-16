@@ -185,6 +185,9 @@ return { -- LSP Configuration & Plugins
     require('mason-lspconfig').setup {
       handlers = {
         function(server_name)
+          if server_name == 'tsserver' then
+            return
+          end
           local server = servers[server_name] or {}
           -- This handles overriding only values explicitly passed
           -- by the server configuration above. Useful when disabling
@@ -194,5 +197,8 @@ return { -- LSP Configuration & Plugins
         end,
       },
     }
+
+    -- Setup templ
+    vim.filetype.add { extension = { templ = 'templ' } }
   end,
 }

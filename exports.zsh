@@ -44,3 +44,5 @@ export PATH="$PATH:$HOME/dotfiles/scripts"
 # export ANDROID_AVD_HOME="$ANDROID_SDK_ROOT/avd"
 # export PATH="$PATH:$ANDROID_CMD_LINE_TOOLS/bin:$ANDROID_SDK_ROOT:$ANDROID_PLATFORM_TOOLS"
 
+# Adding cargo and rust 
+export PATH=$PATH:$HOME/.cargo/bin 
