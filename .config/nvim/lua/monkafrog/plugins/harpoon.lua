@@ -1,6 +1,7 @@
 return {
   'ThePrimeagen/harpoon',
   branch = 'harpoon2',
+  commit = 'e76cb03',
   config = function()
     local harpoon = require 'harpoon'
     local telescope = require 'telescope'
@@ -13,7 +14,7 @@ return {
     end, { desc = '[h]arpoon [m]enu' })
 
     vim.keymap.set('n', '<leader>hi', function()
-      harpoon:list():append()
+      harpoon:list():add()
     end, { desc = '[h]arpoon add [f]i[l]e' })
 
     vim.keymap.set('n', '<leader>hq', function()
