@@ -17,13 +17,13 @@ return { -- Collection of various small independent plugins/modules
     require('mini.surround').setup()
     require('mini.comment').setup()
     require('mini.move').setup()
-    local minifiles = require('mini.files')
-    minifiles.setup({
+    require('mini.tabline').setup()
+    local minifiles = require 'mini.files'
+    minifiles.setup {
       options = {
-        use_as_default_explorer = false
-      }
-    })
-
+        use_as_default_explorer = false,
+      },
+    }
 
     -- Simple and easy statusline.
     --  You could remove this setup call if you don't like it,
@@ -41,8 +41,8 @@ return { -- Collection of various small independent plugins/modules
 
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim
-    local miniclue = require('mini.clue')
-    miniclue.setup({
+    local miniclue = require 'mini.clue'
+    miniclue.setup {
       triggers = {
         -- Leader triggers
         { mode = 'n', keys = '<Leader>' },
@@ -84,6 +84,6 @@ return { -- Collection of various small independent plugins/modules
         miniclue.gen_clues.windows(),
         miniclue.gen_clues.z(),
       },
-    })
+    }
   end,
 }
