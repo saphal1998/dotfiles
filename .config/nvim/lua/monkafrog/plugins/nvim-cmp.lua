@@ -83,5 +83,12 @@ return { -- Autocompletion
         { name = 'path' },
       },
     }
+
+    cmp.setup.filetype({ 'sql' }, {
+      sources = {
+        { name = 'vim-dadbod-completions' },
+        { name = 'buffer' },
+      },
+    })
   end,
 }

@@ -12,7 +12,7 @@ return {
 		right = 0,
 	},
 	tab_bar_at_bottom = true,
-	font_size = 16,
+	font_size = 14,
 	keys = {
 		{
 			key = "w",
