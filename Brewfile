@@ -27,7 +27,6 @@ cask 'camo-studio'
 #Installing Software
 brew 'ansible'
 brew 'btop'
-brew 'bun'
 brew 'cmake'
 brew 'cmatrix'
 brew 'coreutils'
