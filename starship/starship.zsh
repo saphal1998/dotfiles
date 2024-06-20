@@ -1,3 +1,6 @@
+export STARSHIP_DISTRO="$ICON"
+export STARSHIP_CONFIG="$DOTFILES_REPO_PATH/starship/starship.toml"
+
 eval "$(starship init zsh)"
 
 # find out which distribution we are running on
@@ -36,6 +39,3 @@ case $_distro in
     *macos*)                 ICON="";;
     *)                       ICON="";;
 esac
-
-export STARSHIP_DISTRO="$ICON"
-export STARSHIP_CONFIG="$DOTFILES_PATH/zsh/starship/starship.toml"
