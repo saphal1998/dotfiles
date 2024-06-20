@@ -22,7 +22,6 @@ cask 'stats'
 cask 'wezterm'
 cask 'whatsapp'
 cask 'iina'
-cask 'camo-studio'
 
 #Installing Software
 brew 'ansible'
