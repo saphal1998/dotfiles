@@ -1,11 +1,11 @@
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
-tap "koekeishiya/formulae"
-tap "oven-sh/bun"
-tap "nikitabobko/tap"
-tap "riscv/riscv"
 tap "keith/formulae"
+tap "koekeishiya/formulae"
+tap "nikitabobko/tap"
+tap "oven-sh/bun"
+tap "riscv/riscv"
 
 #Installing casks
 cask 'adguard'
@@ -13,6 +13,8 @@ cask 'bitwarden'
 cask 'chromedriver'
 cask 'discord'
 cask 'flycut'
+cask 'font-iosevka'
+cask 'iina'
 cask 'ledger-live'
 cask 'obs'
 cask 'onyx'
@@ -21,14 +23,15 @@ cask 'rectangle'
 cask 'stats'
 cask 'wezterm'
 cask 'whatsapp'
-cask 'iina'
 
 #Installing Software
+
 brew 'ansible'
 brew 'btop'
 brew 'cmake'
 brew 'cmatrix'
 brew 'coreutils'
+brew 'elixir'
 brew 'fzf'
 brew 'git-delta'
 brew 'glow'
@@ -60,7 +63,6 @@ brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
-
 
 mas 'Noir – Dark Mode for Safari', id: 1592917505
 # mas 'Klack', id: 2143728525

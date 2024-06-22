@@ -73,7 +73,7 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Default color theme
-vim.cmd.colorscheme 'habamax'
+vim.cmd.colorscheme 'retrobox'
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
