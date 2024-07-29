@@ -9,7 +9,8 @@ return {
       lua = { 'stylua' },
       python = { 'isort', 'black' },
       javascript = { { 'prettierd', 'prettier' } },
-      sql = { 'sqlfmt' }
+      sql = { 'sqlfmt' },
+      html = { 'djilint' },
     },
     -- Set up format-on-save
     format_on_save = function(bufnr)
