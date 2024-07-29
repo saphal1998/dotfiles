@@ -1,3 +1,6 @@
+if [[ $(command -v brew) == "" ]]; then
+	return
+fi
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then

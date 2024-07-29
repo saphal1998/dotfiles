@@ -4,21 +4,25 @@ export DOTFILES_REPO_PATH="$HOME/dotfiles"
 # Adding local bin to path
 export PATH=/usr/local/bin:$PATH
 
-# Adding homebrew bin to Path
-export PATH=$HOMEBREW_PREFIX/bin:$PATH
 
-# Adding sbin homebrew to Path
-export PATH=$HOMEBREW_PREFIX/sbin:$PATH
+if [[ $(command -v brew) != "" ]]; then
+  # Adding homebrew bin to Path
+  export PATH=$HOMEBREW_PREFIX/bin:$PATH
+
+  # Adding sbin homebrew to Path
+  export PATH=$HOMEBREW_PREFIX/sbin:$PATH
+  
+  # Nvm
+  export NVM_DIR="$HOMEBREW_PREFIX/opt/nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 # Adding Go Bin to path
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
-# Nvm
-export NVM_DIR="$HOMEBREW_PREFIX/opt/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pnpm
 export PNPM_HOME="$HOME/.pnpm"

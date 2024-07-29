@@ -1,3 +1,6 @@
+if [[ $(command -v brew) == "" ]]; then
+	return
+fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Added by OrbStack: command-line tools and integration

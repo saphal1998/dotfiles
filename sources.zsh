@@ -13,7 +13,7 @@
 [[ -f "$HOME/functions.zsh" ]] && source "$HOME/functions.zsh"
 
 # Using zsh autosuggestions
-[[ -f "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[[ $(command -v brew) != "" ]] && [[ -f "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 # ZSH Auto Suggestions style
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#555555,bg=gray,underline"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
