@@ -12,7 +12,6 @@ return {
 	},
 	tab_bar_at_bottom = true,
 	font_size = 16,
-	font = wezterm.font("Iosevka"),
 	keys = {
 		{
 			key = "w",

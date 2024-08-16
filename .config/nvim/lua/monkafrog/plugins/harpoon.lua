@@ -1,7 +1,7 @@
 return {
   'ThePrimeagen/harpoon',
+  dependencies = { 'nvim-lua/plenary.nvim' },
   branch = 'harpoon2',
-  commit = 'e76cb03',
   config = function()
     local harpoon = require 'harpoon'
     local telescope = require 'telescope'
@@ -35,5 +35,28 @@ return {
     vim.keymap.set('n', '<leader>hy', function()
       harpoon:list():select(6)
     end, { desc = '[h]arpoon jump to file [' .. 6 .. ']' })
+    -- basic telescope configuration
+    local conf = require('telescope.config').values
+    local function toggle_telescope(harpoon_files)
+      local file_paths = {}
+      for _, item in ipairs(harpoon_files.items) do
+        table.insert(file_paths, item.value)
+      end
+
+      require('telescope.pickers')
+        .new({}, {
+          prompt_title = 'Harpoon',
+          finder = require('telescope.finders').new_table {
+            results = file_paths,
+          },
+          previewer = conf.file_previewer {},
+          sorter = conf.generic_sorter {},
+        })
+        :find()
+    end
+
+    vim.keymap.set('n', '<C-e>', function()
+      toggle_telescope(harpoon:list())
+    end, { desc = 'Open harpoon window' })
   end,
 }

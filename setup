@@ -51,11 +51,12 @@ cp "$DOTFILES_REPO_PATH/spotifyd/spotifyd.conf" "$HOME/.config/spotifyd/spotifyd
 echo "Installing software"
 brew bundle -v 2>&1 >/dev/null
 
+echo "Decrypting keys based on OpenSSL 3.3.1"
 echo "Password for decrypting ssh keys"
-ansible-vault decrypt "$HOME/.ssh/id_ed25519"
+openssl enc -d -aes-256-cbc -in "$HOME/.ssh/id_ed25519" -out "$HOME/.ssh/id_ed25519" -pass stdin
 
 echo "Password for decrypting spotifyd keys"
-ansible-vault decrypt "$HOME/.config/spotifyd/spotifyd.conf"
+openssl enc -d -aes-256-cbc -in "$HOME/.config/spotifyd/spotifyd.conf" -out "$HOME/.config/spotifyd/spotifyd.conf" -pass stdin
 
 ## Clone tpm
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
