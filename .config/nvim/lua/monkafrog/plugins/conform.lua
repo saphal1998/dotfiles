@@ -8,7 +8,6 @@ return {
     formatters_by_ft = {
       lua = { 'stylua' },
       python = { 'isort', 'black' },
-      javascript = { { 'prettierd', 'prettier' } },
       sql = { 'sqlfmt' },
       html = { 'djilint' },
     },

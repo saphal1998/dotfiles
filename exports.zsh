@@ -11,11 +11,6 @@ if [[ $(command -v brew) != "" ]]; then
 
   # Adding sbin homebrew to Path
   export PATH=$HOMEBREW_PREFIX/sbin:$PATH
-  
-  # Nvm
-  export NVM_DIR="$HOMEBREW_PREFIX/opt/nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
 # Adding Go Bin to path
