@@ -9,7 +9,6 @@ tap "riscv/riscv"
 
 #Installing casks
 cask 'adguard'
-cask 'bitwarden'
 cask 'eloston-chromium'
 cask 'flycut'
 cask 'iina'
