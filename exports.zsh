@@ -27,9 +27,9 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# TERM
-TERM=xterm
 
+# setting TERM
+TERM=xterm
 # TERMINFO: https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 

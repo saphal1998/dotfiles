@@ -55,9 +55,6 @@ echo "Decrypting keys based on OpenSSL 3.3.1"
 echo "Password for decrypting ssh keys"
 openssl enc -d -aes-256-cbc -in "$HOME/.ssh/id_ed25519" -out "$HOME/.ssh/id_ed25519" -pass stdin
 
-echo "Password for decrypting spotifyd keys"
-openssl enc -d -aes-256-cbc -in "$HOME/.config/spotifyd/spotifyd.conf" -out "$HOME/.config/spotifyd/spotifyd.conf" -pass stdin
-
 ## Clone tpm
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
    git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
