@@ -3,6 +3,7 @@ local wezterm = require("wezterm")
 return {
 	use_fancy_tab_bar = false,
 	enable_scroll_bar = false,
+	color_scheme = "tokyonight_night",
 	hide_tab_bar_if_only_one_tab = true,
 	window_padding = {
 		top = 0,

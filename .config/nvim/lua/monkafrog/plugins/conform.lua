@@ -6,6 +6,7 @@ return {
   opts = {
     -- Define your formatters
     formatters_by_ft = {
+      typescript = { 'prettier' },
       lua = { 'stylua' },
       python = { 'isort', 'black' },
       sql = { 'sqlfmt' },

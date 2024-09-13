@@ -46,3 +46,5 @@ export PATH="$PATH:$HOME/dotfiles/scripts"
 # Adding cargo and rust 
 export PATH=$PATH:$HOME/.cargo/bin 
 
+# Adding bun binaries
+export PATH="/Users/monkafrog/.bun/bin:$PATH"

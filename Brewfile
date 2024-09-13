@@ -9,7 +9,7 @@ tap "riscv/riscv"
 
 #Installing casks
 cask 'adguard'
-cask 'eloston-chromium'
+cask 'capcut'
 cask 'flycut'
 cask 'iina'
 cask 'ledger-live'
@@ -21,6 +21,7 @@ cask 'wezterm'
 
 #Installing Software
 brew 'bun'
+brew 'bore-cli'
 brew 'btop'
 brew 'cmake'
 brew 'cmatrix'
@@ -36,6 +37,7 @@ brew 'ncurses'
 brew 'neovim'
 brew 'npm'
 brew 'openssl'
+brew 'odin'
 brew 'parallel'
 brew 'ripgrep'
 brew 'riscv-tools'
@@ -46,10 +48,14 @@ brew 'tailwindcss'
 brew 'tmux'
 brew 'watch'
 brew 'yt-dlp'
+brew 'zig'
 brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 
-mas 'Noir – Dark Mode for Safari', id: 1592917505
-# mas 'Klack', id: 2143728525
+mas "Noir – Dark Mode for Safari", id: 1592917505
+# mas "Klack", id: 2143728525
+mas "Bitwarden", id: 1352778147
+mas "Focus To-Do: Pomodoro & 
+Tasks", id: 1258530160
