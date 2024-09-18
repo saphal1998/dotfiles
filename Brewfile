@@ -1,5 +1,3 @@
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "keith/formulae"
 tap "koekeishiya/formulae"
@@ -9,7 +7,6 @@ tap "riscv/riscv"
 
 #Installing casks
 cask 'adguard'
-cask 'capcut'
 cask 'flycut'
 cask 'iina'
 cask 'ledger-live'
