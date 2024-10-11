@@ -110,7 +110,8 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup {
-  { import = 'monkafrog.plugins' },
+  spec = 'monkafrog.plugins',
+  change_detection = { notify = false },
 }
 
 require 'monkafrog'

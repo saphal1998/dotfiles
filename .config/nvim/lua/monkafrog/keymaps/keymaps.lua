@@ -11,17 +11,17 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('n', 'Q', '@qj', { desc = 'Run the q register' })
 vim.keymap.set('x', 'Q', ':norm@q<C-R>', { desc = 'Run the q register in visual mode' })
 
--- Tab related keymaps
-vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { desc = 'Open a new tab' })
-vim.keymap.set('n', '<leader>td', ':tabclose<CR>', { desc = 'Close the current tab' })
-vim.keymap.set('n', '<leader>tl', ':tabnext<CR>', { desc = 'Next tab' })
-vim.keymap.set('n', '<leader>th', ':tabprev<CR>', { desc = 'Prev tab' })
-
 -- Make something executable
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 
 -- Paste into shadow buffer, also don't override what I delete
 vim.keymap.set('x', '<leader>p', [["_dP]])
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]])
+
+-- Quickfix list
+vim.keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz')
+vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
