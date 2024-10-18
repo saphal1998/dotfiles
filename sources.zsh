@@ -1,6 +1,3 @@
-# Ensure that exports are loaded first
-[[ -f "$HOME/exports.zsh" ]] && source "$HOME/exports.zsh"
-
 # Ensure that aliases are loaded first
 [[ -f "$HOME/aliases.zsh" ]] && source "$HOME/aliases.zsh"
 
