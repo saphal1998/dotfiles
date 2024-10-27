@@ -19,5 +19,10 @@ return {
 			mods = "CMD",
 			action = wezterm.action.CloseCurrentPane({ confirm = false }),
 		},
+		{
+			key = "f",
+			mods = "CTRL",
+			action = wezterm.action.SendString("tmux_sessionizer\n"), -- Replace with your script name, including any relative path if needed
+		},
 	},
 }

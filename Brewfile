@@ -15,10 +15,12 @@ cask 'rectangle'
 cask 'wezterm'
 
 #Installing Software
+brew 'aria2'
 brew 'btop'
 brew 'cmake'
 brew 'cmatrix'
 brew 'coreutils'
+brew 'composer'
 brew 'deno'
 brew 'elixir'
 brew 'fzf'
