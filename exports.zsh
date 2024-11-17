@@ -4,10 +4,10 @@ export DOTFILES_REPO_PATH="$HOME/dotfiles"
 # Adding local bin to path
 export PATH=/usr/local/bin:$PATH
 
-
 if [[ $(command -v brew) != "" ]]; then
   # Adding homebrew bin to Path
   export PATH=$HOMEBREW_PREFIX/bin:$PATH
+  export PATH=$HOMEBREW_PREFIX/opt:$PATH
 
   # Adding sbin homebrew to Path
   export PATH=$HOMEBREW_PREFIX/sbin:$PATH
@@ -45,6 +45,3 @@ export PATH="$PATH:$HOME/dotfiles/scripts"
 
 # Adding cargo and rust 
 export PATH=$PATH:$HOME/.cargo/bin 
-
-# Adding bun binaries
-export PATH="/Users/monkafrog/.bun/bin:$PATH"
