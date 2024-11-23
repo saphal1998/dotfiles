@@ -1,5 +1,5 @@
 -- Netrw
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>pd', vim.cmd.Ex)
 
 -- Moving around
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Center cursor after moving down half-page' })

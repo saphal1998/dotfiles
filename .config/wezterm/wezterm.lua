@@ -11,6 +11,7 @@ return {
 		left = 0,
 		right = 0,
 	},
+	window_background_opacity = 0.8,
 	tab_bar_at_bottom = true,
 	font_size = 16,
 	keys = {
