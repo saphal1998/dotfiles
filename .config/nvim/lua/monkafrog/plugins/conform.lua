@@ -9,7 +9,6 @@ return {
       typescript = { 'prettier' },
       lua = { 'stylua' },
       python = { 'isort', 'black' },
-      sql = { 'sqlfmt' },
       html = { 'djilint' },
     },
     -- Set up format-on-save

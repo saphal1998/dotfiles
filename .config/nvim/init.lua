@@ -110,11 +110,9 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup {
-  spec = 'monkafrog.plugins',
+  spec = { import = 'monkafrog.plugins' },
   change_detection = { notify = false },
 }
-
-require 'monkafrog'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
