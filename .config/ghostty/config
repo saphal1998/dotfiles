@@ -1,0 +1,3 @@
+theme=tokyonight
+shell-integration=zsh
+keybind=ctrl+f=text:tmux_sessionizer\n

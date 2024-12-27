@@ -19,4 +19,3 @@ function addToPathFront() {
         export PATH=$1:$PATH
     fi
 }
-
