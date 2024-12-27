@@ -11,7 +11,7 @@ cask 'iina'
 cask 'ledger-live'
 cask 'orbstack'
 cask 'rectangle'
-cask 'wezterm'
+cask 'ghostty'
 
 #Installing Software
 brew 'aria2'
