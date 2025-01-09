@@ -50,6 +50,7 @@ cp "$DOTFILES_REPO_PATH/spotifyd/spotifyd.conf" "$HOME/.config/spotifyd/spotifyd
 
 echo "Installing software"
 brew bundle -v 2>&1 >/dev/null
+brew autoupdate start 43200 --upgrade --cleanup --immediate --sudo
 
 echo "Decrypting keys based on OpenSSL 3.3.1"
 echo "Password for decrypting ssh keys"

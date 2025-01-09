@@ -3,6 +3,7 @@ tap "keith/formulae"
 tap "koekeishiya/formulae"
 tap "nikitabobko/tap"
 tap "riscv/riscv"
+tap "domt4/autoupdate"
 
 #Installing casks
 cask 'adguard'
@@ -33,6 +34,7 @@ brew 'npm'
 brew 'opam'
 brew 'openssl'
 brew 'parallel'
+brew 'pinentry-mac' #Needed for autoupdate
 brew 'pkg-config'
 brew 'ripgrep'
 brew 'riscv-tools'
@@ -54,4 +56,3 @@ brew 'zsh-vi-mode'
 mas "Bitwarden", id: 1352778147
 mas "Focus To-Do: Pomodoro & Tasks", id: 1258530160
 mas "Noir – Dark Mode for Safari", id: 1592917505
-mas "WireGuard", id: 1451685025

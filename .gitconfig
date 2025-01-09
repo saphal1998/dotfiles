@@ -1,3 +1,5 @@
+[init]
+	defaultBranch = master
 [credential]
 	helper = osxkeychain
 [user]
