@@ -10,10 +10,6 @@
 	gpgsign = true
 [gpg]
 	format = ssh
-
-[alias]
-	logadog = log --oneline --decorate --graph --all
-
 [diff]
 	algorithm = patience
 	compactionHeuristic = true
@@ -42,6 +38,9 @@
 
 [mergetool]
 	keepBackup = false
-
 [rerere]
 	enabled = true
+[push]
+	autoSetupRemote = true
+	default = current
+

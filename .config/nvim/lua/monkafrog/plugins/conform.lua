@@ -10,6 +10,7 @@ return {
       lua = { 'stylua' },
       python = { 'isort', 'black' },
       html = { 'djilint' },
+      ocaml = { 'ocamlformat' },
     },
     -- Set up format-on-save
     format_on_save = function(bufnr)
