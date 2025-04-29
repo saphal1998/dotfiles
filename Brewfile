@@ -2,6 +2,7 @@ tap "homebrew/services"
 tap "keith/formulae"
 tap "koekeishiya/formulae"
 tap "nikitabobko/tap"
+tap "FelixKratz/formulae"
 tap "riscv/riscv"
 
 #Installing casks
@@ -10,8 +11,8 @@ cask 'flycut'
 cask 'iina'
 cask 'ledger-live'
 cask 'orbstack'
-cask 'rectangle'
-cask 'ghostty'
+cask 'wezterm'
+cask 'aerospace'
 
 #Installing Software
 brew 'aria2'
@@ -26,6 +27,7 @@ brew 'golang'
 brew 'httpd'
 brew 'httpie'
 brew 'jq'
+brew 'borders'
 brew 'llvm'
 brew 'lua'
 brew 'ncurses'
@@ -53,3 +55,4 @@ brew 'zsh-vi-mode'
 mas "Klack", id: 2143728525
 mas "Focus To-Do: Pomodoro & Tasks", id: 1258530160
 mas "Noir – Dark Mode for Safari", id: 1592917505
+mas "The Unarchiver", id: 425424353

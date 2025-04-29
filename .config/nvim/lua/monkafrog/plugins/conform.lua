@@ -6,10 +6,8 @@ return {
   opts = {
     -- Define your formatters
     formatters_by_ft = {
-      typescript = { 'prettier' },
+      typescript = { 'eslint_d' },
       lua = { 'stylua' },
-      python = { 'isort', 'black' },
-      html = { 'djilint' },
       ocaml = { 'ocamlformat' },
     },
     -- Set up format-on-save

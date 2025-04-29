@@ -62,6 +62,3 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 fi
 
 git remote set-url origin git@github.com:saphal1998/dotfiles.git
-
-## Ensure that Java can be located by the system
-sudo ln -sfn $HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk

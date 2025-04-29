@@ -1,7 +1,0 @@
-# vim: set ft=conf:
-
-font-size=16
-theme=tokyonight
-shell-integration=zsh
-keybind=ctrl+f=text:tmux_sessionizer\n
-background-opacity=0.8
