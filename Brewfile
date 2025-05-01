@@ -1,8 +1,6 @@
 tap "homebrew/services"
 tap "keith/formulae"
 tap "koekeishiya/formulae"
-tap "nikitabobko/tap"
-tap "FelixKratz/formulae"
 tap "riscv/riscv"
 
 #Installing casks
@@ -12,7 +10,8 @@ cask 'iina'
 cask 'ledger-live'
 cask 'orbstack'
 cask 'wezterm'
-cask 'aerospace'
+cask 'flashspace'
+cask 'rectangle'
 
 #Installing Software
 brew 'aria2'
@@ -27,7 +26,6 @@ brew 'golang'
 brew 'httpd'
 brew 'httpie'
 brew 'jq'
-brew 'borders'
 brew 'llvm'
 brew 'lua'
 brew 'ncurses'
