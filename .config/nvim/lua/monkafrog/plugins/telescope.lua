@@ -1,69 +1,146 @@
 return { -- Fuzzy Finder (files, lsp, etc)
   'nvim-telescope/telescope.nvim',
-  event = 'VimEnter',
+  event = 'VeryLazy', -- Load Telescope only when needed
   branch = '0.1.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    { -- If encountering errors, see telescope-fzf-native README for install instructions
+    { -- Optional: Faster sorting
       'nvim-telescope/telescope-fzf-native.nvim',
-
-      -- `build` is used to run some command when the plugin is installed/updated.
-      -- This is only run then, not every time Neovim starts up.
       build = 'make',
-
-      -- `cond` is a condition used to determine whether this plugin should be
-      -- installed and loaded.
       cond = function()
         return vim.fn.executable 'make' == 1
       end,
     },
-    { 'nvim-telescope/telescope-ui-select.nvim' },
-
-    -- Useful for getting pretty icons, but requires special font.
-    --  If you already have a Nerd Font, or terminal set up with fallback fonts
-    --  you can enable this
-    { 'nvim-tree/nvim-web-devicons' },
+    { 'nvim-telescope/telescope-ui-select.nvim' }, -- Optional: Add a nicer selection UI
+    { 'nvim-tree/nvim-web-devicons', lazy = true }, -- Optional: Icons (only load if you use them)
   },
-  config = function()
-    require('telescope').setup {
-      extensions = {
-        ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
+  opts = {
+    defaults = {
+      mappings = {
+        n = {
+          ['q'] = require('telescope.actions').close,
         },
       },
-    }
-
-    -- Enable telescope extensions, if they are installed
-    pcall(require('telescope').load_extension, 'fzf')
-    pcall(require('telescope').load_extension, 'ui-select')
-
-    -- See `:help telescope.builtin`
-    local builtin = require 'telescope.builtin'
-    vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-    vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-    vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-    vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
-    vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-    vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
-    vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-    vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-    vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-    vim.keymap.set('n', '<leader>sm', builtin.man_pages, { desc = '[S]earch [M]an pages' })
-
-    vim.keymap.set('n', '<leader>/', function()
-      builtin.current_buffer_fuzzy_find()
-    end, { desc = '[/] Fuzzily search in current buffer' })
-
-    vim.keymap.set('n', '<leader>s/', function()
-      builtin.live_grep {
-        grep_open_files = true,
-        prompt_title = 'Live Grep in Open Files',
-      }
-    end, { desc = '[S]earch [/] in Open Files' })
-
-    -- Shortcut for searching your neovim configuration files
-    vim.keymap.set('n', '<leader>sn', function()
-      builtin.find_files { cwd = vim.fn.stdpath 'config' }
-    end, { desc = '[S]earch [N]eovim files' })
-  end,
+    },
+    extensions = {
+      ['ui-select'] = {
+        require('telescope.themes').get_dropdown(),
+      },
+    },
+    pickers = {
+      find_files = {
+        find_command = { 'rg', '--files', '--hidden', '--follow' },
+      },
+      live_grep = {},
+    },
+  },
+  keys = {
+    {
+      '<leader>sh',
+      function()
+        require('telescope.builtin').help_tags()
+      end,
+      desc = '[S]earch [H]elp',
+    },
+    {
+      '<leader>sk',
+      function()
+        require('telescope.builtin').keymaps()
+      end,
+      desc = '[S]earch [K]eymaps',
+    },
+    {
+      '<leader>sf',
+      function()
+        require('telescope.builtin').find_files()
+      end,
+      desc = '[S]earch [F]iles',
+    },
+    {
+      '<leader>ss',
+      function()
+        require('telescope.builtin').builtin()
+      end,
+      desc = '[S]earch [S]elect Telescope',
+    },
+    {
+      '<leader>sw',
+      function()
+        require('telescope.builtin').grep_string()
+      end,
+      desc = '[S]earch current [W]ord',
+    },
+    {
+      '<leader>sg',
+      function()
+        require('telescope.builtin').live_grep()
+      end,
+      desc = '[S]earch by [G]rep',
+    },
+    {
+      '<leader>sd',
+      function()
+        require('telescope.builtin').diagnostics()
+      end,
+      desc = '[S]earch [D]iagnostics',
+    },
+    {
+      '<leader>sr',
+      function()
+        require('telescope.builtin').resume()
+      end,
+      desc = '[S]earch [R]esume',
+    },
+    {
+      '<leader>s.',
+      function()
+        require('telescope.builtin').oldfiles()
+      end,
+      desc = '[S]earch Recent Files ("." for repeat)',
+    },
+    {
+      '<leader>sm',
+      function()
+        require('telescope.builtin').man_pages()
+      end,
+      desc = '[S]earch [M]an pages',
+    },
+    {
+      '<leader>/',
+      function()
+        require('telescope.builtin').current_buffer_fuzzy_find()
+      end,
+      desc = '[/] Fuzzily search in current buffer',
+    },
+    {
+      '<leader>s/',
+      function()
+        require('telescope.builtin').live_grep {
+          grep_open_files = true,
+          prompt_title = 'Live Grep in Open Files',
+        }
+      end,
+      desc = '[S]earch [/] in Open Files',
+    },
+    {
+      '<leader>sn',
+      function()
+        require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
+      end,
+      desc = '[S]earch [N]eovim files',
+    },
+    -- Example of overriding default mappings for a specific picker
+    -- { '<leader>ff', function() require('telescope.builtin').find_files() end, { desc = '[F]ind [F]iles', remap = true, buffer = false },
+    --   opts = {
+    --     config = {
+    --       mappings = {
+    --         n = {
+    --           ['<C-down>'] = require('telescope.actions').move_selection_next,
+    --           ['<C-up>'] = require('telescope.actions').move_selection_previous,
+    --         },
+    --       },
+    --     },
+    --   },
+    -- },
+  },
 }

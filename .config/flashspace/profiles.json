@@ -16,7 +16,7 @@
           "display" : "32G1WG4",
           "id" : "17C560EC-3E04-4B44-B00E-1933120A6D7C",
           "name" : "Coding",
-          "shortcut" : "shift+1",
+          "shortcut" : "opt+1",
           "symbolIconName" : "apple.terminal"
         },
         {
@@ -31,18 +31,22 @@
           "display" : "32G1WG4",
           "id" : "66CC0CEF-7E06-4766-A88D-0CA188135762",
           "name" : "Browsing",
-          "shortcut" : "shift+2",
+          "shortcut" : "opt+2",
           "symbolIconName" : "seal"
         },
         {
           "apps" : [
-
+            {
+              "bundleIdentifier" : "com.apple.TV",
+              "iconPath" : "/System/Applications/TV.app/Contents/Resources/AppIcon.icns",
+              "name" : "TV"
+            }
           ],
           "assignAppShortcut" : "ctrl+3",
           "display" : "32G1WG4",
           "id" : "7A25FDED-BD9D-4A5D-A5B2-C5C5F4422A11",
           "name" : "Adhoc",
-          "shortcut" : "shift+3"
+          "shortcut" : "opt+3"
         }
       ]
     }

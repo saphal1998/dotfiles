@@ -47,16 +47,11 @@ return { -- LSP Configuration & Plugins
     local servers = {
       clangd = {},
       gopls = {},
-      pyright = {},
-      rust_analyzer = {},
       html = {
         filetypes = { 'html', 'tmpl' },
       },
 
       lua_ls = {
-        -- cmd = {...},
-        -- filetypes { ...},
-        -- capabilities = {},
         settings = {
           Lua = {
             runtime = { version = 'LuaJIT' },
