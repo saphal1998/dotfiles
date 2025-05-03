@@ -2,7 +2,7 @@ autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
 
 # Ensure sources are imported first
-[[ -f "$HOME/sources.zsh" ]] && source "$HOME/sources.zsh"
+[[ -f "$HOME/.config/zsh/sources.zsh" ]] && source "$HOME/.config/zsh/sources.zsh"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8

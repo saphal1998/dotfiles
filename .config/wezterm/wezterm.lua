@@ -3,7 +3,6 @@ local wezterm = require("wezterm")
 return {
 	use_fancy_tab_bar = false,
 	enable_scroll_bar = false,
-	color_scheme = "tokyonight_night",
 	hide_tab_bar_if_only_one_tab = true,
 	window_close_confirmation = "NeverPrompt",
 	window_padding = {
@@ -12,9 +11,9 @@ return {
 		left = 0,
 		right = 0,
 	},
-	window_background_opacity = 0.8,
 	tab_bar_at_bottom = true,
-	font_size = 16,
+	window_decorations = "RESIZE",
+	font_size = 13,
 	keys = {
 		{
 			key = "w",

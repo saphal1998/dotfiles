@@ -1,0 +1,102 @@
+[init]
+	defaultBranch = master
+[credential]
+	helper = osxkeychain
+[user]
+	name = monkafrog
+	email = saphal1998@gmail.com
+	signingkey = "~/.ssh/id_ed25519.pub"
+[commit]
+	gpgSign = true
+	template = ~/.config/git/template
+
+[core]
+	autocrlf = input  # keep newlines as in input
+	compression = 9  # trade cpu for network
+	fsync = none
+	whitespace = error  # threat incorrect whitespace as errors
+[advice]  
+	addEmptyPathspec = false
+	pushNonFastForward = false
+	statusHints = false
+[blame]
+	coloring = highlightRecent
+	date = relative
+[gpg]
+	format = ssh
+[log]
+	abbrevCommit = true  # short commits
+	graphColors = blue,yellow,cyan,magenta,green,red
+[status]
+	branch = true
+	short = true
+	showStash = true
+	showUntrackedFiles = all  # show individual untracked files
+[diff]
+	algorithm = patience
+	compactionHeuristic = true
+	tool = nvimdiff
+	context = 3  # less context in diffs
+	renames = copies  # detect copies as renames in diffs
+	interHunkContext = 10  # merge near hunks in diffs
+
+[difftool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd L\"
+
+[merge]
+	tool = nvimdiff4
+	prompt = false
+[mergetool "nvimdiff4"]
+	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	features = side-by-side line-numbers decorations
+	navigate = true
+	whitespace-error-style = 22 reverse
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
+
+[mergetool]
+	keepBackup = false
+[rerere]
+	enabled = true
+[push]
+	autoSetupRemote = true  # easier to push new branches
+	default = current  # push only current branch by default
+	followTags = true  # push also tags
+	gpgSign = false  # my remotes doesn't support sign pushes
+[pull]
+	rebase = true
+
+[submodule]
+	fetchJobs = 16
+
+[rebase]
+	autoStash = true
+# Colors
+[color "blame"]
+	highlightRecent = black bold,1 year ago,white,1 month ago,default,7 days ago,blue
+
+[color "branch"]
+	current  = magenta
+	local    = default
+	remote   = yellow
+	upstream = green
+	plain    = blue
+
+[color "diff"]
+	meta       = black bold
+	frag       = magenta
+	context    = white
+	whitespace = yellow reverse
+
+[url "git@github.com:"]
+	insteadOf = "gh:"
+
+[url "git@github.com:saphal1998/"]
+	insteadOf = "me:"

@@ -1,15 +1,12 @@
-# Ensure that aliases are loaded first
-[[ -f "$HOME/aliases.zsh" ]] && source "$HOME/aliases.zsh"
-
-# Ensure that evals are computed too
-[[ -f "$HOME/evals.zsh" ]] && source "$HOME/evals.zsh"
-
-[[ -f "$HOME/options.zsh" ]] && source "$HOME/options.zsh"
+[[ -f "$ZDOTDIR/exports.zsh" ]] && source "$ZDOTDIR/exports.zsh"
+[[ -f "$ZDOTDIR/aliases.zsh" ]] && source "$ZDOTDIR/aliases.zsh"
+[[ -f "$ZDOTDIR/evals.zsh" ]] && source "$ZDOTDIR/evals.zsh"
+[[ -f "$ZDOTDIR/options.zsh" ]] && source "$ZDOTDIR/options.zsh"
 
 # starship
-[[ -f "$HOME/starship/starship.zsh" ]] && source "$HOME/starship/starship.zsh"
+[[ -f "$ZDOTDIR/starship/starship.zsh" ]] && source "$ZDOTDIR/starship/starship.zsh"
 
-[[ -f "$HOME/functions.zsh" ]] && source "$HOME/functions.zsh"
+[[ -f "$ZDOTDIR/functions.zsh" ]] && source "$ZDOTDIR/functions.zsh"
 
 # Using zsh autosuggestions
 [[ $(command -v brew) != "" ]] && [[ -f "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
@@ -22,6 +19,6 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # Using zsh vi-mode 
 [[ $(command -v brew) != "" ]] && [[ -f "$(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.zsh" ]] && source "$(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.zsh"
 
-[[ -f "$HOME/fzf.zsh" ]] && source "$HOME/fzf.zsh"
+[[ -f "$ZDOTDIR/fzf.zsh" ]] && source "$ZDOTDIR/fzf.zsh"
 
-[[ -f "$HOME/bindkeys.zsh" ]] && source "$HOME/bindkeys.zsh"
+[[ -f "$ZDOTDIR/bindkeys.zsh" ]] && source "$ZDOTDIR/bindkeys.zsh"
