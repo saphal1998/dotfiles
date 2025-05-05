@@ -29,7 +29,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     },
     pickers = {
       find_files = {
-        find_command = { 'rg', '--files', '--hidden', '--follow' },
+        find_command = { 'rg', '--files', '--hidden', '--follow', '-g', '!**/.git/**' },
       },
       live_grep = {},
     },

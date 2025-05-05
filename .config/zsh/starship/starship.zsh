@@ -1,5 +1,5 @@
 export STARSHIP_DISTRO="$ICON"
-export STARSHIP_CONFIG="$DOTFILES_REPO_PATH/starship/starship.toml"
+export STARSHIP_CONFIG="$ZDOTDIR/starship/starship.toml"
 
 eval "$(starship init zsh)"
 
