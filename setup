@@ -42,12 +42,6 @@ cp "$DOTFILES_REPO_PATH/ssh/config" "$HOME/.ssh"
 cp "$DOTFILES_REPO_PATH/ssh/id_ed25519" "$HOME/.ssh"
 cp "$DOTFILES_REPO_PATH/ssh/id_ed25519.pub" "$HOME/.ssh"
 
-echo "Creating directory for spotifyd"
-if [ ! -d "$HOME/.config/spotifyd" ]; then
-   mkdir -p "$HOME/.config/spotifyd"
-fi
-cp "$DOTFILES_REPO_PATH/spotifyd/spotifyd.conf" "$HOME/.config/spotifyd/spotifyd.conf"
-
 echo "Installing software"
 brew bundle -v 2>&1 >/dev/null
 brew autoupdate start 43200 --upgrade --cleanup --immediate --sudo

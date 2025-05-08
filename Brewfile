@@ -6,6 +6,7 @@ tap "riscv/riscv"
 #Installing casks
 cask 'adguard'
 cask 'flycut'
+cask 'discord'
 cask 'iina'
 cask 'ledger-live'
 cask 'orbstack'
