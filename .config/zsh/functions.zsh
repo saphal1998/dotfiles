@@ -7,15 +7,3 @@ function gunwipall() {
     git reset $_commit || return 1
   fi
 }
-
-function addToPath() {
-    if [[ "$PATH" != *"$1"* ]]; then
-        export PATH=$PATH:$1
-    fi
-}
-
-function addToPathFront() {
-    if [[ "$PATH" != *"$1"* ]]; then
-        export PATH=$1:$PATH
-    fi
-}

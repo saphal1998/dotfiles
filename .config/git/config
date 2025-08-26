@@ -49,18 +49,6 @@
 [mergetool "nvimdiff4"]
 	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
-[interactive]
-	diffFilter = delta --color-only
-
-[delta]
-	features = side-by-side line-numbers decorations
-	navigate = true
-	whitespace-error-style = 22 reverse
-[delta "decorations"]
-	commit-decoration-style = bold yellow box ul
-	file-style = bold yellow ul
-	file-decoration-style = none
-
 [mergetool]
 	keepBackup = false
 [rerere]

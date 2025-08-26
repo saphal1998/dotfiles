@@ -12,8 +12,7 @@ return {
 		right = 0,
 	},
 	tab_bar_at_bottom = true,
-	window_decorations = "RESIZE",
-	font_size = 13,
+	font_size = 16,
 	keys = {
 		{
 			key = "w",
