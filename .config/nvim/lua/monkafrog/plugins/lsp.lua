@@ -1,15 +1,11 @@
-return { -- LSP Configuration & Plugins
+return {
   'neovim/nvim-lspconfig',
   dependencies = {
-    -- Automatically install LSPs and related tools to stdpath for neovim
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
     'saghen/blink.cmp',
-
     { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
+    -- LspAttach autocommands and keymaps
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
@@ -27,8 +23,14 @@ return { -- LSP Configuration & Plugins
         map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+        -- Diagnostic keymaps
+        map('[d', vim.lsp.diagnostic.goto_prev, 'Go to previous [D]iagnostic message' )
+        map(']d', vim.lsp.diagnostic.goto_next, 'Go to next [D]iagnostic message' )
+        map('<leader>e', vim.lsp.diagnostic.open_float, 'Show diagnostic [E]rror messages')
+        map('<leader>q', vim.lsp.diagnostic.setloclist, 'Open diagnostic [Q]uickfix list' )
+
         local client = vim.lsp.get_client_by_id(event.data.client_id)
-        if client and client.server_capabilities.documentHighlightProvider then
+        if client and client.server_capabilities and client.server_capabilities.documentHighlightProvider then
           vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
             buffer = event.buf,
             callback = vim.lsp.buf.document_highlight,
@@ -42,67 +44,91 @@ return { -- LSP Configuration & Plugins
       end,
     })
 
+    -- Capabilities (augment via blink.cmp if present)
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
+    local ok_blink, blink = pcall(require, 'blink.cmp')
+    if ok_blink and blink.get_lsp_capabilities then
+      capabilities = vim.tbl_deep_extend('force', capabilities, blink.get_lsp_capabilities())
+    end
+
+    -- LSP servers configuration table (you install servers yourself)
     local servers = {
       clangd = {},
       gopls = {},
       html = {
         filetypes = { 'html', 'tmpl' },
       },
-
       lua_ls = {
         settings = {
           Lua = {
             runtime = { version = 'LuaJIT' },
             workspace = {
               checkThirdParty = false,
-              -- Tells lua_ls where to find all the Lua files that you have loaded
-              -- for your neovim configuration.
               library = {
                 '${3rd}/luv/library',
                 unpack(vim.api.nvim_get_runtime_file('', true)),
               },
-              -- If lua_ls is really slow on your computer, you can try this instead:
-              -- library = { vim.env.VIMRUNTIME },
             },
-            completion = {
-              callSnippet = 'Replace',
-            },
-            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+            completion = { callSnippet = 'Replace' },
             diagnostics = { disable = { 'missing-fields' } },
           },
         },
       },
+      -- Example: to skip tsserver from being auto-configured set to nil here:
+      -- tsserver = nil,
     }
 
-    require('mason').setup()
+    local lspconfig_ok, lspconfig = pcall(require, 'lspconfig')
+    if not lspconfig_ok then
+      vim.notify('nvim-lspconfig not available', vim.log.levels.ERROR)
+      return
+    end
 
-    -- You can add other tools here that you want Mason to install
-    -- for you, so that they are available from within Neovim.
-    local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-      'stylua', -- Used to format lua code
-    })
-    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+    -- Helper: determine executable name to check on PATH
+    local function get_expected_cmd(name, cfg)
+      -- Priority:
+      -- 1) cfg.cmd if provided (array) -> first element
+      -- 2) lspconfig's default_config.cmd -> first element
+      -- 3) fallback to name
+      if cfg and cfg.cmd and type(cfg.cmd) == 'table' and cfg.cmd[1] then
+        return cfg.cmd[1]
+      end
 
-    require('mason-lspconfig').setup {
-      handlers = {
-        function(server_name)
-          if server_name == 'tsserver' then
-            return
+      local ok, doc_config = pcall(function()
+        return lspconfig[name].document_config and lspconfig[name].document_config.default_config
+      end)
+      if ok and doc_config and doc_config.cmd and type(doc_config.cmd) == 'table' and doc_config.cmd[1] then
+        return doc_config.cmd[1]
+      end
+
+      return name
+    end
+
+    -- Setup servers but skip if executable not found on PATH
+    for name, cfg in pairs(servers) do
+      if cfg ~= nil then
+        local merged_cfg = vim.tbl_deep_extend('force', {
+          capabilities = vim.deepcopy(capabilities),
+        }, cfg or {})
+
+        local exe = get_expected_cmd(name, merged_cfg)
+        if exe and vim.fn.executable(exe) == 1 then
+          local ok, err = pcall(function()
+            lspconfig[name].setup(merged_cfg)
+          end)
+          if not ok then
+            vim.notify(string.format('Failed to setup LSP server %s: %s', name, err), vim.log.levels.WARN)
           end
-          local server = servers[server_name] or {}
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for tsserver)
-          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
-        end,
-      },
-    }
+        else
+          vim.notify(
+            string.format('Skipping LSP server %s: executable "%s" not found on PATH. Install it and ensure it is available on PATH.', name, exe),
+            vim.log.levels.INFO
+          )
+        end
+      end
+    end
 
-    -- Setup templ
+    -- Filetype mapping for templ extension
     vim.filetype.add { extension = { templ = 'templ' } }
   end,
 }

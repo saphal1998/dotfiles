@@ -48,3 +48,10 @@ mas "Klack", id: 2143728525
 mas "Focus To-Do: Pomodoro & Tasks", id: 1258530160
 mas "Noir – Dark Mode for Safari", id: 1592917505
 mas "The Unarchiver", id: 425424353
+
+#Installing devtools
+brew 'stylua'
+brew 'lua-language-server'
+brew 'gopls'
+brew 'vscode-langservers-extracted'
+brew 'clangd'
