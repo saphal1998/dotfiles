@@ -35,19 +35,19 @@
 [diff]
 	algorithm = patience
 	compactionHeuristic = true
-	tool = nvimdiff
+	tool = vimdiff
 	context = 3  # less context in diffs
 	renames = copies  # detect copies as renames in diffs
 	interHunkContext = 10  # merge near hunks in diffs
 
-[difftool "nvimdiff"]
-	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd L\"
+[difftool "vimdiff"]
+	cmd = vim -d \"$LOCAL\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd L\"
 
 [merge]
-	tool = nvimdiff4
+	tool = vimdiff4
 	prompt = false
-[mergetool "nvimdiff4"]
-	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[mergetool "vimdiff4"]
+	cmd = vim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
 [mergetool]
 	keepBackup = false
@@ -66,7 +66,7 @@
 
 [rebase]
 	autoStash = true
-# Colors
+
 [color "blame"]
 	highlightRecent = black bold,1 year ago,white,1 month ago,default,7 days ago,blue
 

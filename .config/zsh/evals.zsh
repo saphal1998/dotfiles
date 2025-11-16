@@ -1,1 +1,1 @@
-eval $(opam env --switch=default)
+# eval $(opam env --switch=default)

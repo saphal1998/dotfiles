@@ -14,35 +14,19 @@ cask 'rectangle'
 brew 'ffmpeg'
 brew 'yt-dlp'
 
-# mas "Klack", id: 2143728525
-mas "Focus To-Do: Pomodoro & Tasks", id: 1258530160
-mas "Noir – Dark Mode for Safari", id: 1592917505
-mas "The Unarchiver", id: 425424353
-
 # Installing devtools
-brew 'cmake'
 brew 'coreutils'
 brew 'fzf'
-brew 'golang'
 brew 'httpd'
 brew 'jq'
 brew 'llvm'
-brew 'lua'
-brew 'ncurses'
-brew 'neovim'
-brew 'npm'
-brew 'opam'
 brew 'openssl'
 brew 'parallel'
 brew 'pkg-config'
-brew 'pnpm'
-brew 'ripgrep'
 brew 'sqlite3'
 brew 'starship'
 brew 'stow'
 brew 'tmux'
-brew 'uv'
-brew 'watch'
 brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'

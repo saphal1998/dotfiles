@@ -1,11 +1,2 @@
 # Mac specific
 .DS_Store
-
-# Python specific
-.mypy_cache/
-.pytest_cache/
-__pycache__/
-.hypothesis/
-.ruff_cache/
-.ropeproject/
-

@@ -13,21 +13,6 @@ if [[ $(command -v brew) != "" ]]; then
   export PATH=$HOMEBREW_PREFIX/sbin:$PATH
 fi
 
-# Adding Go Bin to path
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN
-
-
-# pnpm
-export PNPM_HOME="$HOME/.pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-
 # setting TERM
 TERM=xterm
 # TERMINFO: https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/
@@ -44,4 +29,17 @@ export PATH="$PATH:$HOME/dotfiles/scripts"
 # export PATH="$PATH:$ANDROID_CMD_LINE_TOOLS/bin:$ANDROID_SDK_ROOT:$ANDROID_PLATFORM_TOOLS"
 
 # Adding cargo and rust 
-export PATH=$PATH:$HOME/.cargo/bin 
+# export PATH=$PATH:$HOME/.cargo/bin 
+
+# Adding Go Bin to path
+# export GOPATH=$HOME/go
+# export GOBIN=$GOPATH/bin
+# export PATH=$PATH:$GOBIN
+
+
+# pnpm
+# export PNPM_HOME="$HOME/.pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME:"*) ;;
+#   *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
