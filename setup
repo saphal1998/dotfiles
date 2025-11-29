@@ -31,24 +31,11 @@ stow .
 # Using the zsh installed by Homebrew
 sudo dscl . -create /Users/$USER UserShell $(brew --prefix)/bin/zsh
 
-if [ ! -d "$HOME/.ssh" ]; then
-   echo "Creating the .ssh folder"
-   mkdir -p "$HOME/.ssh"
-fi
-
-echo "Copying relevant ssh keys"
-
+echo "Copying relevant ssh config"
 cp "$DOTFILES_REPO_PATH/ssh/config" "$HOME/.ssh"
-cp "$DOTFILES_REPO_PATH/ssh/id_ed25519" "$HOME/.ssh"
-cp "$DOTFILES_REPO_PATH/ssh/id_ed25519.pub" "$HOME/.ssh"
 
 echo "Installing software"
 brew bundle -v 2>&1 >/dev/null
-brew autoupdate start 43200 --upgrade --cleanup --immediate --sudo
-
-echo "Decrypting keys based on OpenSSL 3.3.1"
-echo "Password for decrypting ssh keys"
-openssl enc -d -aes-256-cbc -in "$HOME/.ssh/id_ed25519" -out "$HOME/.ssh/id_ed25519" -pass stdin
 
 ## Clone tpm
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
