@@ -1,3 +1,5 @@
+tap 'tw93/tap'
+
 # Installing casks
 cask 'adguard'
 cask 'iina'
@@ -11,6 +13,7 @@ cask 'font-hack-nerd-font'
 # Installing Software
 brew 'ffmpeg'
 brew 'yt-dlp'
+brew 'mole' #  tap = tw93/tap
 
 # Installing devtools
 brew 'coreutils'
