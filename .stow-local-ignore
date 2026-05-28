@@ -26,3 +26,4 @@ spotifyd
 ssh
 setup
 Brewfile.lock.json
+.pi/

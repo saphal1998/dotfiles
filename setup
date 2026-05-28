@@ -1,12 +1,13 @@
 #!/bin/bash
 set -e
 
-echo "Checking if git is available"
+if ! command -v git >/dev/null 2>&1; then
+    echo "git is required but was not found in PATH"
+    exit 1
+fi
 
-git --version 2>&1 >/dev/null
-GIT_IS_AVAILABLE=$?
-if [ $GIT_IS_AVAILABLE -ne 0 ]; then
-    echo "Git is not available"
+if ! command -v brew >/dev/null 2>&1; then
+    echo "Homebrew is required but was not found in PATH"
     exit 1
 fi
 
@@ -21,7 +22,6 @@ fi
 
 echo "Installing minimal set of dependencies"
 # Install the required dependencies
-brew install git
 brew install stow
 brew install zsh
 
@@ -32,7 +32,11 @@ stow .
 sudo dscl . -create /Users/$USER UserShell $(brew --prefix)/bin/zsh
 
 echo "Copying relevant ssh config"
-cp "$DOTFILES_REPO_PATH/ssh/config" "$HOME/.ssh"
+mkdir -p "$HOME/.ssh"
+if [ -f "$HOME/.ssh/config" ] && ! cmp -s "$DOTFILES_REPO_PATH/ssh/config" "$HOME/.ssh/config"; then
+    cp "$HOME/.ssh/config" "$HOME/.ssh/config.$(date +%Y%m%d%H%M%S).bak"
+fi
+cp "$DOTFILES_REPO_PATH/ssh/config" "$HOME/.ssh/config"
 
 echo "Installing software"
 brew bundle -v 2>&1 >/dev/null
@@ -42,4 +46,8 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
    git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 fi
 
-git remote set-url origin git@github.com:saphal1998/dotfiles.git
+if git -C "$DOTFILES_REPO_PATH" rev-parse --is-inside-work-tree >/dev/null 2>&1 &&
+   [ "$(git -C "$DOTFILES_REPO_PATH" rev-parse --show-toplevel)" = "$DOTFILES_REPO_PATH" ] &&
+   git -C "$DOTFILES_REPO_PATH" remote get-url origin >/dev/null 2>&1; then
+    git -C "$DOTFILES_REPO_PATH" remote set-url origin git@github.com:saphal1998/dotfiles.git
+fi

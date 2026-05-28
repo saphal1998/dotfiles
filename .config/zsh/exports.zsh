@@ -3,6 +3,7 @@ export DOTFILES_REPO_PATH="$HOME/dotfiles"
 
 # Adding local bin to path
 export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 if [[ $(command -v brew) != "" ]]; then
   # Adding homebrew bin to Path
@@ -13,8 +14,6 @@ if [[ $(command -v brew) != "" ]]; then
   export PATH=$HOMEBREW_PREFIX/sbin:$PATH
 fi
 
-# setting TERM
-TERM=xterm
 # TERMINFO: https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 

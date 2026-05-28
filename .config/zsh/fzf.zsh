@@ -3,15 +3,15 @@ if [[ $(command -v brew) == "" ]]; then
 fi
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
+FZF_PREFIX="$(brew --prefix fzf 2>/dev/null)" || return
+if [[ ! "$PATH" == *"$FZF_PREFIX/bin"* ]]; then
+  PATH="${PATH:+${PATH}:}$FZF_PREFIX/bin"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$FZF_PREFIX/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
-
+source "$FZF_PREFIX/shell/key-bindings.zsh"

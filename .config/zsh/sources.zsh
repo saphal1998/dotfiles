@@ -20,5 +20,3 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 [[ $(command -v brew) != "" ]] && [[ -f "$(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.zsh" ]] && source "$(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.zsh"
 
 [[ -f "$ZDOTDIR/fzf.zsh" ]] && source "$ZDOTDIR/fzf.zsh"
-
-[[ -f "$ZDOTDIR/bindkeys.zsh" ]] && source "$ZDOTDIR/bindkeys.zsh"
