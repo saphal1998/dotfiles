@@ -9,6 +9,7 @@ require("mini.trailspace").setup({})
 require("mini.bufremove").setup({})
 require("mini.notify").setup({})
 require("mini.icons").setup({})
+require("mini.statusline").setup({})
 
 require("mini.diff").setup({
 	view = {

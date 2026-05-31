@@ -18,6 +18,7 @@ vim.pack.add({
 	},
 	"https://github.com/L3MON4D3/LuaSnip",
 	"https://github.com/christoomey/vim-tmux-navigator",
+  "https://github.com/folke/which-key.nvim",
 })
 
 
