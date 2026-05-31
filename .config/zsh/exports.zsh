@@ -14,6 +14,12 @@ if [[ $(command -v brew) != "" ]]; then
   export PATH=$HOMEBREW_PREFIX/sbin:$PATH
 fi
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+if [[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ]]; then
+  source "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
+fi
+
 # TERMINFO: https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 
