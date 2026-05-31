@@ -97,5 +97,5 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 return {
-  augroup = augroup
+	augroup = augroup,
 }

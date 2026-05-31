@@ -73,4 +73,3 @@ vim.opt.splitright = true -- vertical splits go right
 vim.opt.wildmenu = true -- tab completion
 vim.opt.wildmode = "longest:full,full" -- complete longest common match, full completion list, cycle through with Tab
 vim.opt.diffopt:append("linematch:60") -- improve diff display
-
