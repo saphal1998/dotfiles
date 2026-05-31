@@ -119,11 +119,9 @@ vim.keymap.set("n", "<leader>dl", vim.diagnostic.open_float, { desc = "Show line
 
 require("blink.cmp").setup({
 	keymap = {
-		preset = "none",
+		preset = "default",
 		["<C-Space>"] = { "show", "hide" },
 		["<CR>"] = { "accept", "fallback" },
-		["<C-j>"] = { "select_next", "fallback" },
-		["<C-k>"] = { "select_prev", "fallback" },
 		["<Tab>"] = { "snippet_forward", "fallback" },
 		["<S-Tab>"] = { "snippet_backward", "fallback" },
 	},
