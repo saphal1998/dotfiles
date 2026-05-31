@@ -40,6 +40,7 @@ brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 brew 'zsh-vi-mode'
+brew 'tree-sitter-cli'
 
 # AI
 cask 'codex'
