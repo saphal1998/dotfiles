@@ -1,5 +1,7 @@
-autoload -U +X bashcompinit && bashcompinit
+[[ -f "$ZDOTDIR/completions.zsh" ]] && source "$ZDOTDIR/completions.zsh"
+
 autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 
 # Ensure sources are imported first
 [[ -f "$HOME/.config/zsh/sources.zsh" ]] && source "$HOME/.config/zsh/sources.zsh"
