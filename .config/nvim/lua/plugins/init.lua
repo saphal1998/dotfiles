@@ -1,4 +1,4 @@
 require("plugins.treesitter")
-require("plugins.fzf")
+require("plugins.snacks.nvim")
 require("plugins.mini")
 require("plugins.lsp")

@@ -51,7 +51,7 @@ local function lsp_on_attach(ev)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
 	vim.keymap.set("n", "<leader>gd", function()
-		require("fzf-lua").lsp_definitions({ jump1 = true })
+		Snacks.picker.lsp_definitions()
 	end, opts)
 
 	vim.keymap.set("n", "<leader>gD", vim.lsp.buf.definition, opts)
@@ -81,19 +81,19 @@ local function lsp_on_attach(ev)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
 	vim.keymap.set("n", "<leader>fr", function()
-		require("fzf-lua").lsp_references()
+		Snacks.picker.lsp_references()
 	end, opts)
 	vim.keymap.set("n", "<leader>ft", function()
-		require("fzf-lua").lsp_typedefs()
+		Snacks.picker.lsp_type_definitions()
 	end, opts)
 	vim.keymap.set("n", "<leader>fs", function()
-		require("fzf-lua").lsp_document_symbols()
+		Snacks.picker.lsp_symbols()
 	end, opts)
 	vim.keymap.set("n", "<leader>fw", function()
-		require("fzf-lua").lsp_workspace_symbols()
+		Snacks.picker.lsp_workspace_symbols()
 	end, opts)
 	vim.keymap.set("n", "<leader>fi", function()
-		require("fzf-lua").lsp_implementations()
+		Snacks.picker.lsp_implementations()
 	end, opts)
 
 	if client:supports_method("textDocument/codeAction", bufnr) then

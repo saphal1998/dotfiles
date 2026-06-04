@@ -22,10 +22,29 @@ vim.keymap.set({ "n", "v" }, "<leader>x", '"_d', { desc = "Delete without yankin
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
 
-vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>", { desc = "Move to left window/pane" })
-vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", { desc = "Move to bottom window/pane" })
-vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", { desc = "Move to top window/pane" })
-vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>", { desc = "Move to right window/pane" })
+local function navigate_or_tmux(wincmd, tmux_direction)
+	local before = vim.api.nvim_get_current_win()
+	vim.cmd.wincmd(wincmd)
+
+	if before ~= vim.api.nvim_get_current_win() or not vim.env.TMUX then
+		return
+	end
+
+	vim.fn.system({ "tmux", "select-pane", "-" .. tmux_direction })
+end
+
+vim.keymap.set("n", "<C-h>", function()
+	navigate_or_tmux("h", "L")
+end, { desc = "Move to left window/pane" })
+vim.keymap.set("n", "<C-j>", function()
+	navigate_or_tmux("j", "D")
+end, { desc = "Move to bottom window/pane" })
+vim.keymap.set("n", "<C-k>", function()
+	navigate_or_tmux("k", "U")
+end, { desc = "Move to top window/pane" })
+vim.keymap.set("n", "<C-l>", function()
+	navigate_or_tmux("l", "R")
+end, { desc = "Move to right window/pane" })
 
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", ":split<CR>", { desc = "Split window horizontally" })

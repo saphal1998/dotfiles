@@ -15,3 +15,6 @@ fi
 # Key bindings
 # ------------
 source "$FZF_PREFIX/shell/key-bindings.zsh"
+
+# fzf binds Tab to fzf-completion; keep plain Tab on zsh command completion.
+bindkey '^I' expand-or-complete
